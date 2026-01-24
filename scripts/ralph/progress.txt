@@ -16,6 +16,7 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - Forward-referencing wikilinks to not-yet-created notes (e.g., MLFQ) are fine — Obsidian shows them as unresolved links
 - Memory layout diagrams use `+--+` box-drawing with labeled annotations (e.g., `<- base_A = 16 KB`) for physical memory visualization
 - The OS/hardware split pattern (hardware=fast path per-access, OS=lifecycle events) is a recurring theme across virtualization chapters
+- OSTEP uses a "limitation → next mechanism" progression: base-and-bounds (internal waste) → segmentation (external fragmentation) → paging (fixed-size units)
 
 ---
 
@@ -144,4 +145,21 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - The free list data structure introduced here is a forward reference to US-011 (Free-Space Management) — kept simple here, detailed later
   - Internal waste (unused gap between heap and stack) is the key limitation motivating segmentation — important to emphasize this trade-off
   - ASCII diagrams for memory layout use `+--+` box drawing and labeled arrows for base/bounds annotations
+---
+
+## 2026-01-25 - US-010
+- Created atomic notes: Segmentation Generalizes Base-and-Bounds with Multiple Segments, Code Stack and Heap Each Get Their Own Segment, The Segment Table Maps Segment Numbers to Base-Bounds Pairs, Coarse-Grained vs Fine-Grained Segmentation Trade Flexibility for Simplicity, External Fragmentation Wastes Memory Between Variable-Sized Segments
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (324-430), ≥3 body wikilinks, ≥5 related entries
+- Segmentation note includes ASCII physical memory diagram showing independent segment placement
+- Segment table note includes address decomposition example with 14-bit virtual address
+- External fragmentation note forward-links to free-space management (US-011)
+- Prerequisites chain: base-and-bounds → segmentation concept → segment types + segment table → coarse/fine-grained → external fragmentation
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Segmentation is OSTEP Ch. 16 (PRD says "Ch 12" — story numbering, not OSTEP chapter)
+  - The forward-reference `[[Segmentation Generalizes Base-and-Bounds with Multiple Segments]]` was already placed in US-009's base-and-bounds note — match titles exactly
+  - Stack negative-growth arithmetic (base + offset - max_seg_size) is the pedagogically trickiest part; worth a worked example
+  - External fragmentation vs internal fragmentation distinction is a key compare/contrast that appears across multiple chapters
+  - Code sharing (same physical code segment, multiple processes) is segmentation's unique advantage over base-and-bounds — paging enables this too but via a different mechanism
+  - The "why coarse won" narrative (fine-grained segmentation's complexity → paging's simplicity) is a useful historical thread
 ---
