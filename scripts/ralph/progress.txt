@@ -11,7 +11,22 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - Git LF/CRLF warnings appear but don't block commits
 - PRD story "Ch N" numbering differs from OSTEP chapter numbers (US-003 "Ch 3" = OSTEP Ch. 5)
 - Notes with special chars in filenames (parentheses, etc.) work fine for Obsidian wikilinks
+- Mechanism chapters (LDE, scheduling) have strictly linear prerequisite chains; concept chapters (memory, FS) branch more
 
+---
+
+## 2026-01-24 - US-004
+- Created atomic notes: Direct Execution Runs Programs Directly on the CPU, User Mode and Kernel Mode Provide Dual Protection Levels, System Calls Transfer Control via Trap and Return-from-Trap, Timer Interrupts Enable Preemptive Multitasking, Context Switch Saves and Restores Process State
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (399-459), ≥2 wikilinks
+- Code examples: trap table setup in C (system calls note), xv6 context switch assembly (context switch note)
+- Prerequisites chain: process abstraction → direct execution → user/kernel mode → traps → timer interrupts → context switch
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Limited Direct Execution is OSTEP Ch. 6 (PRD says "Ch 4" — story numbering, not OSTEP chapter)
+  - The "two levels of register saving" concept (hardware saves user regs, OS saves kernel regs) is the most confusing part of context switching — worth emphasizing
+  - Assembly code examples from xv6 work well as pedagogical examples of context switch internals
+  - The prerequisite chain for this chapter is linear and deep: each concept strictly builds on the previous
+  - Timer interrupts are the bridge between mechanisms (this chapter) and policies (scheduling chapters)
 ---
 
 ## 2026-01-24 - US-003
