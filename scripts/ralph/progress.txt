@@ -9,7 +9,22 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - Folder structure: `Virtualization/`, `Concurrency/`, `Persistence/` at project root
 - Wikilinks use `[[Note Title]]` format (Obsidian-style)
 - Git LF/CRLF warnings appear but don't block commits
+- PRD story "Ch N" numbering differs from OSTEP chapter numbers (US-003 "Ch 3" = OSTEP Ch. 5)
+- Notes with special chars in filenames (parentheses, etc.) work fine for Obsidian wikilinks
 
+---
+
+## 2026-01-24 - US-003
+- Created atomic notes: fork() Creates a Child by Copying Parent, exec() Replaces the Process Image, wait() Synchronizes Parent and Child, Process API Design Philosophy
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks, C code examples
+- Prerequisites chain: process abstraction → fork → exec/wait → design philosophy
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Process API is OSTEP Ch. 5 (PRD says "Ch 3" but that's story numbering, not OSTEP chapter)
+  - Notes with parentheses in filenames (e.g., `fork()`) work fine in Obsidian wikilinks
+  - The fork-exec-wait separation is a rich design philosophy topic - good for a standalone note beyond just API docs
+  - C code examples with return value checking follow OSTEP's pedagogical pattern
+  - Prerequisites can have multiple independent chains (fork prereqs both abstraction AND states)
 ---
 
 ## 2026-01-24 - US-002
