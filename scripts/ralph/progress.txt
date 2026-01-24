@@ -14,6 +14,8 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - Mechanism chapters (LDE, scheduling) have strictly linear prerequisite chains; concept chapters (memory, FS) branch more
 - ASCII timeline diagrams use `|===|` for execution blocks and `Time:` axis labels for scheduling trace examples
 - Forward-referencing wikilinks to not-yet-created notes (e.g., MLFQ) are fine — Obsidian shows them as unresolved links
+- Memory layout diagrams use `+--+` box-drawing with labeled annotations (e.g., `<- base_A = 16 KB`) for physical memory visualization
+- The OS/hardware split pattern (hardware=fast path per-access, OS=lifecycle events) is a recurring theme across virtualization chapters
 
 ---
 
@@ -110,4 +112,36 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - ASCII timeline diagrams for MLFQ need to show queue levels (Q2/Q1/Q0) as rows, not just time axis
   - The Solaris dispatch table is a good concrete example that shows MLFQ is not just theoretical
   - "Voo-doo constants" is OSTEP's memorable way of saying these are workload-dependent parameters
+---
+
+## 2026-01-24 - US-008
+- Created chapter overview: Virtualization/Memory - Chapter Overview.md
+- Created atomic notes: The Address Space Abstracts Physical Memory for Each Process, Memory Virtualization Goals - Transparency Efficiency and Protection, Stack and Heap Occupy Opposite Ends of the Address Space, malloc and free Manage Heap Memory Dynamically, Common Memory Bugs - Dangling Pointers Double Free and Leaks
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (409-484), ≥2 body wikilinks, ≥4 related entries
+- Code examples: malloc/free usage patterns (malloc note), bug patterns including use-after-free, double-free, buffer overflow, and leaks (bugs note)
+- Prerequisites chain: process abstraction → address space → virtualization goals; address space → stack/heap layout → malloc/free → memory bugs
+- Files changed: 6 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Address Spaces is OSTEP Ch. 13, Memory API is OSTEP Ch. 14 (PRD says "Ch 9-10" — story numbering, not OSTEP chapter)
+  - The address space note is foundational for ALL subsequent memory stories — it's the equivalent of "A Process is a Running Program" for the memory section
+  - malloc/free being library calls (not syscalls) is a key insight: the system call layer (brk/mmap) is separate from the programmer API layer
+  - Memory bugs note benefits from C code examples showing each bug pattern — the code is more pedagogical than the prose
+  - The stack/heap opposing-growth layout is a convention, not a hardware requirement — emphasizing this prevents misconceptions
+  - Word counts tend to run high when code examples are included; strip code blocks before counting
+---
+
+## 2026-01-24 - US-009
+- Created atomic notes: Address Translation Maps Virtual Addresses to Physical Addresses, Base-and-Bounds Provides Dynamic Relocation, Hardware Registers Enable Efficient Address Translation, The OS Manages Memory at Process Creation and Context Switch
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (396-496), ≥3 body wikilinks, ≥5 related entries
+- Base-and-Bounds note includes ASCII diagram of physical memory layout with 3 relocated processes
+- OS role note includes C code for free list allocation structure
+- Prerequisites chain: address space → virtualization goals → address translation → base-and-bounds → hardware registers → OS role
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Address Translation is OSTEP Ch. 15 (PRD says "Ch 11" — story numbering, not OSTEP chapter)
+  - The OS/hardware split pattern recurs throughout OSTEP: hardware handles the fast path (every access), OS handles lifecycle events (creation, switch, termination)
+  - Base-and-bounds is pedagogically important as the simplest translation mechanism — all later mechanisms (segmentation, paging) are refinements
+  - The free list data structure introduced here is a forward reference to US-011 (Free-Space Management) — kept simple here, detailed later
+  - Internal waste (unused gap between heap and stack) is the key limitation motivating segmentation — important to emphasize this trade-off
+  - ASCII diagrams for memory layout use `+--+` box drawing and labeled arrows for base/bounds annotations
 ---
