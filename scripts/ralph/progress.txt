@@ -12,6 +12,8 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - PRD story "Ch N" numbering differs from OSTEP chapter numbers (US-003 "Ch 3" = OSTEP Ch. 5)
 - Notes with special chars in filenames (parentheses, etc.) work fine for Obsidian wikilinks
 - Mechanism chapters (LDE, scheduling) have strictly linear prerequisite chains; concept chapters (memory, FS) branch more
+- ASCII timeline diagrams use `|===|` for execution blocks and `Time:` axis labels for scheduling trace examples
+- Forward-referencing wikilinks to not-yet-created notes (e.g., MLFQ) are fine — Obsidian shows them as unresolved links
 
 ---
 
@@ -63,4 +65,33 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Pre-existing numbered folders (1- Virtualization, 2- Concurrency, 3- Persistance) exist but the PKM uses clean folder names
   - YAML frontmatter validation can be done with Python's `yaml.safe_load()` on content between `---` markers
   - MOC sections correspond to chapter groupings that later stories will populate
+---
+
+## 2026-01-24 - US-005
+- Verified existing atomic notes: Scheduling - Chapter Overview, Turnaround Time and Response Time Measure Scheduling Quality, FIFO Scheduling is Simple but Suffers from Convoy Effect, Shortest Job First Minimizes Average Turnaround Time, Round Robin Trades Turnaround Time for Response Time
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (410-491), ≥4 wikilinks
+- Each algorithm note includes worked trace examples with ASCII timelines showing job arrivals
+- Prerequisites chain: context switch/timer interrupts → metrics → FIFO → SJF → RR
+- Files changed: 5 files in Virtualization/ (committed from previously untracked state)
+- **Learnings for future iterations:**
+  - CPU Scheduling is OSTEP Ch. 7 (PRD says "Ch 5" — story numbering, not OSTEP chapter)
+  - The turnaround/response trade-off is the core pedagogical thread; each algorithm note should position itself on this spectrum
+  - ASCII timeline diagrams (using `=` for execution and `|` for boundaries) are effective for scheduling traces
+  - Forward-referencing MLFQ wikilinks (e.g., `[[MLFQ Basic Rules - Priority Queues with Feedback]]`) work fine — Obsidian treats them as future notes
+  - SJF's three examples (simultaneous, staggered, STCF) show the progressive relaxation pattern OSTEP uses throughout
+---
+
+## 2026-01-24 - US-006
+- Created atomic notes: MLFQ Basic Rules - Priority Queues with Feedback, MLFQ Prevents Gaming with Priority Boost and Accounting, MLFQ Tuning Balances Queue Count and Time Slice Length
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (443-486), ≥3 body wikilinks, ≥5 related entries
+- Each note includes worked examples showing job movement between queues (demotion, boosting, gaming detection)
+- Prerequisites chain: scheduling metrics + Round Robin → basic rules → gaming prevention → tuning
+- Files changed: 3 new files in Virtualization/
+- **Learnings for future iterations:**
+  - MLFQ is OSTEP Ch. 8 (PRD says "Ch 6" — story numbering, not OSTEP chapter)
+  - The forward-reference `[[MLFQ Basic Rules - Priority Queues with Feedback]]` from US-005's Round Robin note is now resolved
+  - MLFQ's five rules evolve across the chapter: Rules 4a/4b become a single Rule 4 (accounting), Rule 5 (boost) is added later
+  - ASCII timeline diagrams for MLFQ need to show queue levels (Q2/Q1/Q0) as rows, not just time axis
+  - The Solaris dispatch table is a good concrete example that shows MLFQ is not just theoretical
+  - "Voo-doo constants" is OSTEP's memorable way of saying these are workload-dependent parameters
 ---
