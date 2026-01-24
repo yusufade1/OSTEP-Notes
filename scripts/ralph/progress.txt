@@ -81,6 +81,22 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - SJF's three examples (simultaneous, staggered, STCF) show the progressive relaxation pattern OSTEP uses throughout
 ---
 
+## 2026-01-24 - US-007
+- Created atomic notes: Lottery Scheduling Uses Tickets to Achieve Proportional Share, Stride Scheduling Provides Deterministic Proportional Share, Multi-CPU Scheduling Faces Cache Affinity and Synchronization Challenges, Single-Queue vs Multi-Queue Approaches Balance Simplicity and Scalability
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (431-499), ≥2 body wikilinks, ≥5 related entries
+- Lottery note includes C code for ticket drawing and worked 10-draw example showing convergence
+- Stride note includes worked pass-counter trace for 3 processes showing deterministic fairness
+- Multi-CPU notes cross-link to context switch and cache affinity concepts
+- Prerequisites chain: scheduling metrics + RR → lottery → stride; scheduling metrics + context switch → multi-CPU challenges → SQMS/MQMS
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Lottery/Stride scheduling is OSTEP Ch. 9, Multi-CPU scheduling is OSTEP Ch. 10 (PRD says "Ch 7-8" — story numbering)
+  - The proportional-share concept bridges fairness (from metrics) with determinism (stride) — lottery is pedagogically first because simpler
+  - Multi-CPU scheduling introduces hardware concerns (cache coherence, NUMA) that don't appear in single-CPU scheduling
+  - The SQMS→MQMS progression mirrors the single-lock→per-CPU-lock pattern seen in concurrent data structures
+  - Word count validation should strip both code blocks AND table rows — tables add visual structure but shouldn't count toward prose length
+---
+
 ## 2026-01-24 - US-006
 - Created atomic notes: MLFQ Basic Rules - Priority Queues with Feedback, MLFQ Prevents Gaming with Priority Boost and Accounting, MLFQ Tuning Balances Queue Count and Time Slice Length
 - All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (443-486), ≥3 body wikilinks, ≥5 related entries

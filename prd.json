@@ -108,7 +108,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 7,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
