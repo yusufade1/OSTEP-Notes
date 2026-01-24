@@ -1,0 +1,36 @@
+# Ralph Progress Log
+Started: Sat Jan 24 07:09:57 PM EET 2026
+---
+
+## Codebase Patterns
+- MOC files use YAML frontmatter with `type: moc`, `tags: [topic]`, and `related:` containing wikilinks to other MOCs
+- Atomic notes should use `type: atomic`, include `source`, `tags`, `related` (wikilinks), and `prerequisites` in frontmatter
+- Each atomic note needs a `[!SUMMARY]` callout and should be 200-500 words
+- Folder structure: `Virtualization/`, `Concurrency/`, `Persistence/` at project root
+- Wikilinks use `[[Note Title]]` format (Obsidian-style)
+- Git LF/CRLF warnings appear but don't block commits
+
+---
+
+## 2026-01-24 - US-002
+- Created chapter overview: Virtualization/Processes - Chapter Overview.md
+- Created atomic notes: A Process is a Running Program, Process States - Ready Running and Blocked, Process Data Structures - PCB Registers and Memory Image
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - The source field uses OSTEP chapter numbers (Ch. 4 for processes) which differ from the PRD story numbering
+  - Declarative titles work well as note names - makes wikilinks self-explanatory
+  - Code blocks in notes (e.g., xv6 struct) should be excluded from word count validation
+  - Overview files use `type: overview` rather than `type: atomic`
+  - Prerequisites form a chain: abstraction → states → data structures (DAG structure)
+---
+
+## 2026-01-24 - US-001
+- Created folder structure: Virtualization/, Concurrency/, Persistence/
+- Created MOC skeleton files with valid YAML frontmatter and placeholder sections
+- Files changed: Virtualization/Virtualization MOC.md, Concurrency/Concurrency MOC.md, Persistence/Persistence MOC.md
+- **Learnings for future iterations:**
+  - Pre-existing numbered folders (1- Virtualization, 2- Concurrency, 3- Persistance) exist but the PKM uses clean folder names
+  - YAML frontmatter validation can be done with Python's `yaml.safe_load()` on content between `---` markers
+  - MOC sections correspond to chapter groupings that later stories will populate
+---

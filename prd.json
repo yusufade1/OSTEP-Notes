@@ -1,0 +1,589 @@
+{
+  "project": "OSTEP-PKM",
+  "branchName": "ralph/ostep-pkm-conversion",
+  "description": "Convert all ~50 OSTEP chapters into atomic Obsidian PKM notes organized into Virtualization, Concurrency, and Persistence folders with wikilinks, prerequisites, and quality gates.",
+  "userStories": [
+    {
+      "id": "US-001",
+      "title": "Create folder structure and MOC skeletons",
+      "description": "As a developer, I need the vault folder structure and skeleton MOC files so subsequent stories have a target location.",
+      "acceptanceCriteria": [
+        "Create Virtualization/, Concurrency/, Persistence/ folders",
+        "Create Virtualization/Virtualization MOC.md with frontmatter (type: moc, tags: [virtualization]) and placeholder sections: Processes, Scheduling, Memory",
+        "Create Concurrency/Concurrency MOC.md with frontmatter and placeholder sections: Threads, Synchronization, Bugs & Patterns",
+        "Create Persistence/Persistence MOC.md with frontmatter and placeholder sections: I/O & Storage, File Systems, Distributed FS",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 1,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-002",
+      "title": "Process abstraction and lifecycle (Ch 2)",
+      "description": "As a student, I want atomic notes on what a process is and its lifecycle states so I understand the fundamental CPU virtualization abstraction.",
+      "acceptanceCriteria": [
+        "Create Virtualization/Processes - Chapter Overview.md linking to atomic notes",
+        "Atomic notes for: process abstraction (a process is a running program), process states (ready/running/blocked), process data structures (PCB, registers, memory image)",
+        "Each note has YAML frontmatter with type, source (OSTEP Ch. 4), tags, related (≥2 wikilinks), prerequisites",
+        "Each note has [!SUMMARY] callout and is 200-500 words",
+        "Process abstraction note has prerequisites: [] (foundational)",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 2,
+      "passes": true,
+      "notes": ""
+    },
+    {
+      "id": "US-003",
+      "title": "Process API - fork, exec, wait (Ch 3)",
+      "description": "As a student, I want atomic notes on the Unix process API so I understand how processes are created and managed.",
+      "acceptanceCriteria": [
+        "Atomic notes for: fork() creates child by copying parent, exec() replaces process image, wait() synchronizes parent-child, process API design philosophy",
+        "Each note includes simplified C code examples from OSTEP (fork return values, exec variants, wait semantics)",
+        "Prerequisites chain from process abstraction notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 3,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-004",
+      "title": "Limited Direct Execution (Ch 4)",
+      "description": "As a student, I want atomic notes on how the OS safely runs user programs using hardware support.",
+      "acceptanceCriteria": [
+        "Atomic notes for: direct execution concept, user mode vs kernel mode, system call mechanism (trap/return-from-trap), timer interrupts enable preemption, context switch mechanism",
+        "Code examples for trap table setup and context switch assembly",
+        "Prerequisites reference process abstraction and states notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 4,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-005",
+      "title": "CPU Scheduling Introduction (Ch 5)",
+      "description": "As a student, I want atomic notes on scheduling metrics and basic policies so I can evaluate scheduling algorithms.",
+      "acceptanceCriteria": [
+        "Create Virtualization/Scheduling - Chapter Overview.md linking to all scheduling atomic notes",
+        "Atomic notes for: scheduling metrics (turnaround time, response time), FIFO scheduling, SJF/STCF (shortest job first), Round Robin scheduling",
+        "Each algorithm note includes a worked trace example with job arrivals",
+        "Prerequisites reference direct execution and context switch notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 5,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-006",
+      "title": "MLFQ Scheduling (Ch 6)",
+      "description": "As a student, I want atomic notes on Multi-Level Feedback Queue so I understand how real schedulers balance turnaround and response time.",
+      "acceptanceCriteria": [
+        "Atomic notes for: MLFQ basic rules (priority queues, feedback), MLFQ gaming prevention (priority boost, accounting), MLFQ tuning (time slice per queue, number of queues)",
+        "Each note includes worked example showing job movement between queues",
+        "Prerequisites reference scheduling metrics and Round Robin notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 6,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-007",
+      "title": "Proportional Share and Multi-CPU Scheduling (Ch 7-8)",
+      "description": "As a student, I want notes on lottery/stride scheduling and multiprocessor scheduling challenges.",
+      "acceptanceCriteria": [
+        "Atomic notes for: lottery scheduling (tickets, randomness), stride scheduling (deterministic proportional share), multi-CPU scheduling challenges (cache affinity, load balancing), single-queue vs multi-queue multiprocessor scheduling",
+        "Lottery note includes ticket allocation example",
+        "Prerequisites reference scheduling metrics notes",
+        "Cross-link multi-CPU notes to context switch and cache concepts",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 7,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-008",
+      "title": "Address Spaces and Memory API (Ch 9-10)",
+      "description": "As a student, I want atomic notes on the address space abstraction and memory management API.",
+      "acceptanceCriteria": [
+        "Create Virtualization/Memory - Chapter Overview.md linking to all memory atomic notes",
+        "Atomic notes for: address space abstraction, memory virtualization goals (transparency/efficiency/protection), stack vs heap layout, malloc/free API, common memory bugs (dangling pointers, double free, leaks)",
+        "Code examples for malloc/free usage and common bug patterns",
+        "Prerequisites reference process abstraction notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 8,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-009",
+      "title": "Address Translation and Base-and-Bounds (Ch 11)",
+      "description": "As a student, I want notes on hardware-based address translation starting with the simplest mechanism.",
+      "acceptanceCriteria": [
+        "Atomic notes for: address translation concept (virtual to physical), base-and-bounds (dynamic relocation), hardware support for translation (base/bounds registers), OS role in address translation (free list, context switch save/restore)",
+        "Includes diagram description of physical memory with relocated address spaces",
+        "Prerequisites reference address space abstraction",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 9,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-010",
+      "title": "Segmentation (Ch 12)",
+      "description": "As a student, I want notes on segmentation as a generalization of base-and-bounds.",
+      "acceptanceCriteria": [
+        "Atomic notes for: segmentation concept (multiple base-bounds pairs), segment types (code/stack/heap), segment table, coarse vs fine-grained segmentation, external fragmentation problem",
+        "Prerequisites reference base-and-bounds notes",
+        "Cross-link external fragmentation to free-space management",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 10,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-011",
+      "title": "Free-Space Management (Ch 13)",
+      "description": "As a student, I want notes on how the OS manages variable-sized memory regions.",
+      "acceptanceCriteria": [
+        "Atomic notes for: splitting and coalescing, free list data structure, best-fit allocation, worst-fit allocation, first-fit and next-fit allocation, buddy system, slab allocator",
+        "Each allocation strategy includes trade-off analysis (speed vs fragmentation)",
+        "Prerequisites reference segmentation and external fragmentation",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 11,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-012",
+      "title": "Paging Introduction (Ch 14)",
+      "description": "As a student, I want notes on paging as a solution to fragmentation using fixed-size units.",
+      "acceptanceCriteria": [
+        "Atomic notes for: paging concept (fixed-size pages and frames), page table structure, page table entry (PTE) contents (PFN, valid, protection, dirty, reference bits), address split (VPN + offset), paging advantages over segmentation",
+        "Includes worked example of address translation with page table",
+        "Prerequisites reference segmentation and external fragmentation problem",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 12,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-013",
+      "title": "TLBs (Ch 15)",
+      "description": "As a student, I want notes on how TLBs make paging fast by caching address translations.",
+      "acceptanceCriteria": [
+        "Atomic notes for: TLB concept (hardware cache for translations), TLB hit/miss flow, hardware-managed vs software-managed TLBs, TLB contents (VPN, PFN, valid, protection, ASID), context switch TLB handling (flush vs ASID tagging), TLB replacement policies",
+        "Includes MIPS-style TLB miss handler code from OSTEP",
+        "Prerequisites reference paging and PTE notes",
+        "Cross-link to scheduling (context switch flushes TLB)",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 13,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-014",
+      "title": "Smaller Page Tables (Ch 16)",
+      "description": "As a student, I want notes on techniques to reduce page table memory overhead.",
+      "acceptanceCriteria": [
+        "Atomic notes for: page table size problem (linear tables waste memory), larger pages (trade-off with internal fragmentation), multi-level page tables (page directory + page tables), inverted page tables, hybrid paging-segmentation",
+        "Multi-level note includes worked address translation example",
+        "Prerequisites reference paging introduction and TLB notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 14,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-015",
+      "title": "Swapping Mechanisms and Policies (Ch 17-18)",
+      "description": "As a student, I want notes on how the OS uses disk to extend memory beyond physical limits.",
+      "acceptanceCriteria": [
+        "Atomic notes for: swap space concept, page fault handling flow, present bit in PTE, page replacement policies (optimal/MIN, FIFO, LRU, clock/approximating LRU), thrashing, working set model",
+        "Each replacement policy includes comparison trace with same reference string",
+        "Prerequisites reference paging and TLB notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 15,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-016",
+      "title": "Threads Introduction (Ch 20)",
+      "description": "As a student, I want atomic notes on thread concepts so I understand shared-memory concurrency.",
+      "acceptanceCriteria": [
+        "Create Concurrency/Threads - Chapter Overview.md linking to thread atomic notes",
+        "Atomic notes for: thread vs process (shared address space), why threads (parallelism, avoiding blocking), thread creation and execution model, race conditions and non-determinism, critical sections and mutual exclusion need",
+        "Code examples showing shared variable race condition",
+        "Cross-link to process notes (threads as lightweight processes)",
+        "Prerequisites reference process abstraction and address space notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 16,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-017",
+      "title": "Thread API - pthreads (Ch 21)",
+      "description": "As a student, I want notes on the POSIX thread API so I can write concurrent programs.",
+      "acceptanceCriteria": [
+        "Atomic notes for: pthread_create (thread creation), pthread_join (waiting for completion), pthread_mutex_lock/unlock (mutual exclusion), pthread_cond_wait/signal (condition variables API)",
+        "Each note includes complete C code example from OSTEP",
+        "Prerequisites reference thread concepts and race condition notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 17,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-018",
+      "title": "Lock Implementations (Ch 22)",
+      "description": "As a student, I want notes on how locks are built using hardware and OS support.",
+      "acceptanceCriteria": [
+        "Create Concurrency/Locks - Chapter Overview.md linking to lock atomic notes",
+        "Atomic notes for: lock goals (mutual exclusion, fairness, performance), spin locks (simple but wasteful), test-and-set atomic instruction, compare-and-swap instruction, fetch-and-add and ticket locks, yield-based locks, queue-based locks (park/unpark), two-phase locks",
+        "Each implementation includes C pseudocode showing the mechanism",
+        "Prerequisites reference critical section and mutual exclusion need",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 18,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-019",
+      "title": "Lock-Based Data Structures (Ch 23)",
+      "description": "As a student, I want notes on how to make common data structures thread-safe.",
+      "acceptanceCriteria": [
+        "Atomic notes for: concurrent counters (approximate/sloppy counters), concurrent linked lists (hand-over-hand locking), concurrent queues (two-lock approach), concurrent hash tables (per-bucket locking)",
+        "Each note includes C code showing the locking strategy",
+        "Prerequisites reference lock implementation notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 19,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-020",
+      "title": "Condition Variables (Ch 24)",
+      "description": "As a student, I want notes on condition variables for thread signaling and waiting.",
+      "acceptanceCriteria": [
+        "Atomic notes for: condition variable concept (wait/signal semantics), why while-loops not if-checks, producer-consumer with condition variables (bounded buffer), covering conditions (broadcast as fallback)",
+        "Each note includes C code from OSTEP producer-consumer examples",
+        "Prerequisites reference lock notes and critical section concept",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 20,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-021",
+      "title": "Semaphores (Ch 25)",
+      "description": "As a student, I want notes on semaphores as a unified synchronization primitive.",
+      "acceptanceCriteria": [
+        "Atomic notes for: semaphore definition (sem_wait/sem_post), binary semaphore as lock, semaphore as condition variable, reader-writer locks with semaphores, dining philosophers problem, Zemaphores (Dijkstra's semantics)",
+        "Each pattern includes C code implementation",
+        "Prerequisites reference lock and condition variable notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 21,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-022",
+      "title": "Concurrency Bugs (Ch 26)",
+      "description": "As a student, I want notes on common concurrency bug patterns so I can recognize and prevent them.",
+      "acceptanceCriteria": [
+        "Atomic notes for: atomicity violation bugs, order violation bugs, deadlock (four conditions: mutual exclusion, hold-and-wait, no preemption, circular wait), deadlock prevention strategies, deadlock avoidance (Banker's algorithm concept), livelock",
+        "Each bug type includes real-world example from OSTEP (MySQL, Mozilla, etc.)",
+        "Cross-links to lock and condition variable notes",
+        "Prerequisites reference locks, CVs, and semaphore notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 22,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-023",
+      "title": "Event-Based Concurrency (Ch 27)",
+      "description": "As a student, I want notes on event-driven programming as an alternative to threads.",
+      "acceptanceCriteria": [
+        "Atomic notes for: event loop concept (single-threaded concurrency), select/poll API, problem of blocking in event systems, async I/O solutions, state management in event-driven code (manual stack ripping)",
+        "Cross-links to thread notes comparing concurrency models",
+        "Prerequisites reference thread and I/O concepts",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 23,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-024",
+      "title": "I/O Devices (Ch 30)",
+      "description": "As a student, I want notes on how the OS communicates with hardware devices.",
+      "acceptanceCriteria": [
+        "Create Persistence/IO and Storage - Chapter Overview.md linking to I/O atomic notes",
+        "Atomic notes for: I/O architecture (bus hierarchy: CPU, memory, I/O), device interface (status/command/data registers), polling vs interrupts (trade-offs), DMA (offloading data transfer from CPU), device drivers (abstraction layer)",
+        "Cross-links to process notes (interrupt handling, context switches)",
+        "Prerequisites reference system calls and trap mechanisms from virtualization",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 24,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-025",
+      "title": "Hard Disk Drives (Ch 31)",
+      "description": "As a student, I want notes on HDD internals and disk scheduling algorithms.",
+      "acceptanceCriteria": [
+        "Atomic notes for: disk geometry (platters/tracks/sectors/surfaces), disk access time components (seek, rotation, transfer), disk scheduling algorithms (SSTF, SCAN/C-SCAN, SPTF), I/O merging, track skew and disk cache",
+        "Each scheduling algorithm includes seek-sequence worked example",
+        "Prerequisites reference I/O device architecture",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 25,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-026",
+      "title": "RAID (Ch 32)",
+      "description": "As a student, I want notes on RAID levels and their capacity/reliability/performance trade-offs.",
+      "acceptanceCriteria": [
+        "Atomic notes for: RAID concept (redundancy + performance), RAID-0 striping (performance, no redundancy), RAID-1 mirroring (reliability, high cost), RAID-4 block-level parity (write penalty), RAID-5 rotating parity (distributed write load), RAID analysis methodology (capacity, reliability, performance formulas)",
+        "Each RAID level includes formula for capacity, reliability, and throughput",
+        "Prerequisites reference disk geometry and I/O concepts",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 26,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-027",
+      "title": "Files and Directories API (Ch 33)",
+      "description": "As a student, I want notes on the file system interface (system calls for files and directories).",
+      "acceptanceCriteria": [
+        "Create Persistence/File Systems - Chapter Overview.md linking to FS atomic notes",
+        "Atomic notes for: file abstraction (named byte sequence), directory abstraction (name-to-inode mapping), file API (open/read/write/close/lseek), fsync for persistence, file metadata (stat), directory API (mkdir, readdir, rmdir), hard links vs symbolic links",
+        "Code examples for open/read/write patterns and directory traversal",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 27,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-028",
+      "title": "File System Implementation - VSFS (Ch 34)",
+      "description": "As a student, I want notes on how a simple file system (VSFS) is implemented on disk.",
+      "acceptanceCriteria": [
+        "Atomic notes for: disk layout (superblock, bitmaps, inode region, data region), inode structure (metadata + direct/indirect block pointers), data bitmap and inode bitmap, directory entries on disk, file read path (open → inode → data blocks), file write path (allocate → write → update metadata), free-space tracking",
+        "Includes diagram description of VSFS disk layout",
+        "Prerequisites reference file/directory abstraction notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 28,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-029",
+      "title": "Fast File System - FFS (Ch 35)",
+      "description": "As a student, I want notes on how FFS improved performance over the original Unix FS.",
+      "acceptanceCriteria": [
+        "Atomic notes for: FFS motivation (old FS fragmentation and long seeks), cylinder groups (locality-aware allocation), FFS block allocation policies (same group for files in directory, spread directories), large file exception (avoid filling one group), sub-block optimization for small files",
+        "Prerequisites reference VSFS implementation notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 29,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-030",
+      "title": "Crash Consistency and Journaling (Ch 36)",
+      "description": "As a student, I want notes on how file systems handle crashes mid-update.",
+      "acceptanceCriteria": [
+        "Atomic notes for: crash consistency problem (partial writes), crash scenarios (bitmap updated but not inode, inode updated but not data, etc.), fsck approach (scan and repair), journaling concept (write-ahead logging), journal structure (TxBegin, metadata, data, TxEnd), journal checkpointing, metadata-only journaling (optimization), ordered journaling",
+        "Prerequisites reference VSFS implementation (inode, bitmaps, data blocks)",
+        "Cross-link to LFS notes as alternative approach",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 30,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-031",
+      "title": "Log-Structured File Systems (Ch 37)",
+      "description": "As a student, I want notes on LFS as a write-optimized file system design.",
+      "acceptanceCriteria": [
+        "Atomic notes for: LFS motivation (writes are bottleneck, memory is cheap for reads), write buffering (segment-sized batches), inode map (indirection for finding moved inodes), checkpoint region (fixed location pointing to inode map), LFS garbage collection (cleaning segments, cost-benefit policy)",
+        "Cross-links to journaling (LFS as alternative approach to crash consistency)",
+        "Prerequisites reference VSFS and crash consistency notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 31,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-032",
+      "title": "Flash-Based SSDs and Data Integrity (Ch 38-39)",
+      "description": "As a student, I want notes on SSD internals and data protection mechanisms.",
+      "acceptanceCriteria": [
+        "Atomic notes for: flash memory basics (pages/blocks, read/write/erase asymmetry), flash translation layer (FTL, log-structured), wear leveling, SSD performance characteristics, data integrity challenges (bit rot, misdirected writes), checksums for corruption detection, disk scrubbing",
+        "Prerequisites reference disk and file system concepts",
+        "Cross-link FTL to LFS (similar log-structured approach)",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 32,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-033",
+      "title": "NFS - Sun's Network File System (Ch 42)",
+      "description": "As a student, I want notes on NFS as a stateless distributed file system.",
+      "acceptanceCriteria": [
+        "Create Persistence/Distributed FS - Chapter Overview.md linking to NFS and AFS notes",
+        "Atomic notes for: NFS architecture (client-server, VFS layer), stateless protocol design (why and implications), NFS file handles (volume/inode/generation), idempotent operations, client-side caching and cache consistency (attribute cache, flush-on-close)",
+        "Prerequisites reference file system API and implementation notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 33,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-034",
+      "title": "AFS - Andrew File System (Ch 43)",
+      "description": "As a student, I want notes on AFS and its callback-based consistency model.",
+      "acceptanceCriteria": [
+        "Atomic notes for: AFS architecture (whole-file caching on local disk), AFS callbacks (server notifies client of changes), AFS consistency model (session semantics, last-writer-wins), AFS vs NFS comparison (scalability, consistency, caching granularity)",
+        "Cross-links to NFS notes for comparison",
+        "Prerequisites reference NFS architecture notes",
+        "Each note has [!SUMMARY] callout, 200-500 words, ≥2 wikilinks",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 34,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-035",
+      "title": "Finalize Virtualization MOC with all chapter links",
+      "description": "As a student, I want the Virtualization MOC to link all chapter overviews and key atomic notes for complete navigation.",
+      "acceptanceCriteria": [
+        "Virtualization MOC.md updated with wikilinks to all chapter overview notes (Processes, Scheduling, Memory)",
+        "Each sub-theme section lists key atomic notes (3-5 most important per sub-theme)",
+        "Brief 1-sentence description next to each wikilink for context",
+        "Frontmatter related field links to Concurrency and Persistence MOCs",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 35,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-036",
+      "title": "Finalize Concurrency MOC with all chapter links",
+      "description": "As a student, I want the Concurrency MOC to link all chapter overviews and key atomic notes.",
+      "acceptanceCriteria": [
+        "Concurrency MOC.md updated with wikilinks to all chapter overview notes (Threads, Locks, CVs/Semaphores, Bugs, Events)",
+        "Each sub-theme section lists key atomic notes (3-5 most important per sub-theme)",
+        "Brief 1-sentence description next to each wikilink for context",
+        "Frontmatter related field links to Virtualization and Persistence MOCs",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 36,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-037",
+      "title": "Finalize Persistence MOC with all chapter links",
+      "description": "As a student, I want the Persistence MOC to link all chapter overviews and key atomic notes.",
+      "acceptanceCriteria": [
+        "Persistence MOC.md updated with wikilinks to all chapter overview notes (I/O & Storage, File Systems, Distributed FS)",
+        "Each sub-theme section lists key atomic notes (3-5 most important per sub-theme)",
+        "Brief 1-sentence description next to each wikilink for context",
+        "Frontmatter related field links to Virtualization and Concurrency MOCs",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 37,
+      "passes": false,
+      "notes": ""
+    },
+    {
+      "id": "US-038",
+      "title": "Cross-theme link validation and quality gate review",
+      "description": "As a reviewer, I want to verify all notes pass quality gates and cross-theme links exist.",
+      "acceptanceCriteria": [
+        "Verify cross-theme links exist: process↔thread, address space↔file system, interrupt↔I/O devices, scheduling↔concurrency bugs, context switch↔TLB flush",
+        "Every note has ≥2 entries in related field",
+        "Prerequisites graph forms a valid DAG (no cycles)",
+        "All notes are 200-500 words (excluding frontmatter and code blocks)",
+        "All notes have [!SUMMARY] callout",
+        "All notes have declarative titles (statements, not topics)",
+        "No temporal language (no 'recently', 'modern', 'new')",
+        "YAML frontmatter is valid and parseable"
+      ],
+      "priority": 38,
+      "passes": false,
+      "notes": ""
+    }
+  ]
+}
