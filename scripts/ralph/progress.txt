@@ -213,3 +213,18 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - The OS/hardware split pattern continues: hardware handles TLB hit (fast path), OS/hardware handles miss (depending on architecture)
   - Replacement policy matters less for TLBs than for page replacement (99% hit rate makes miss policy less impactful)
 ---
+
+## 2026-01-25 - US-014
+- Created atomic notes: Linear Page Tables Waste Memory for Large Address Spaces, Larger Pages Reduce Table Size but Increase Internal Fragmentation, Multi-Level Page Tables Save Space Through Demand Allocation, Inverted Page Tables Map Physical Frames to Virtual Pages, Hybrid Paging and Segmentation Combines Both Approaches
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 body wikilinks, ≥6 related entries
+- Multi-level note includes detailed worked example: 14-bit address translation through page directory + page table
+- Prerequisites chain: linear page table problem + paging intro → larger pages / multi-level / inverted / hybrid approaches
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Smaller Page Tables is OSTEP Ch. 20 (PRD says "Ch 16" — story numbering, not OSTEP chapter)
+  - Multi-level page tables are the dominant solution in practice (x86-64 uses 4 levels); inverted tables are historical (PowerPC)
+  - The worked translation example should show all three address components: directory index, table index, offset
+  - Page table chunks being page-sized is a key design insight—it enables using the same allocator for page tables and data
+  - Hybrid paging-segmentation reintroduces external fragmentation at the kernel level, which explains why it lost to pure multi-level
+  - The 4 MB per process calculation (32-bit, 4 KB pages, 4-byte PTEs) is the hook that motivates all solutions
+---
