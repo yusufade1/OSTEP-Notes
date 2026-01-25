@@ -181,3 +181,19 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Slab allocators are kernel-specific but important context: they're how Linux manages common objects
   - Forward references to paging (next story US-012) are natural here: fixed-size allocation avoids fragmentation
 ---
+
+## 2026-01-25 - US-012
+- Created atomic notes: Paging Divides Memory into Fixed-Size Pages and Frames, The Page Table Stores Virtual-to-Physical Mappings, Page Table Entries Contain PFN and Control Bits, Virtual Addresses Split into VPN and Offset, Paging Eliminates External Fragmentation Through Fixed-Size Units
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (366-462), ≥2 body wikilinks, ≥6 related entries
+- VPN+Offset note includes full worked example: 16-bit address 0x3A5B → VPN=3 → PFN=7 → physical 0x7A5B
+- PTE note covers all control bits: valid, present, R/W/X, dirty, accessed with x86 bit layout
+- Prerequisites chain: external fragmentation + segmentation → paging concept → page table → PTE → VPN/offset; segmentation → paging advantages
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Paging Introduction is OSTEP Ch. 18 (PRD says "Ch 14" — story numbering, not OSTEP chapter)
+  - The worked VPN+offset example is the pedagogical heart of this chapter — showing actual bit manipulation makes translation concrete
+  - Page table overhead (4 MB per process with 32-bit addresses and 4 KB pages) is the hook for US-014 (smaller page tables)
+  - Forward references to TLBs are natural: "this happens on every access" motivates caching
+  - The "paging vs segmentation" comparison table pattern is effective for contrasting mechanisms
+  - Paging notes connect to both segmentation (what it replaces) and free-space management (what it simplifies)
+---
