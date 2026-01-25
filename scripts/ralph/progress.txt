@@ -163,3 +163,21 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Code sharing (same physical code segment, multiple processes) is segmentation's unique advantage over base-and-bounds — paging enables this too but via a different mechanism
   - The "why coarse won" narrative (fine-grained segmentation's complexity → paging's simplicity) is a useful historical thread
 ---
+
+## 2026-01-25 - US-011
+- Created atomic notes: Splitting and Coalescing Keep the Free List Efficient, The Free List Data Structure Tracks Available Memory Regions, Best-Fit Allocation Minimizes Wasted Space but Requires Full Search, Worst-Fit Allocation Leaves Large Holes but Still Fragments, First-Fit and Next-Fit Trade Search Time for Simplicity, The Buddy System Enables Fast Coalescing Through Power-of-Two Sizes, Slab Allocators Pre-Allocate Fixed-Size Object Caches
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (280-414), ≥2 body wikilinks, ≥4 related entries
+- Each allocation strategy note includes trade-off analysis table (speed vs fragmentation)
+- Best-fit/worst-fit notes contrast with each other; first-fit offers speed advantage over both
+- Buddy system note includes power-of-two splitting diagram and XOR buddy address calculation
+- Slab allocator note explains Linux kernel's layered approach (slabs atop buddy allocator)
+- Prerequisites chain: external fragmentation → free list / splitting-coalescing → allocation strategies (best/worst/first-fit) → buddy system / slab allocator
+- Files changed: 7 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Free-Space Management is OSTEP Ch. 17 (PRD says "Ch 13" — story numbering, not OSTEP chapter)
+  - The allocation strategy comparison (best/worst/first/next-fit) is best presented as a set of notes with cross-references and comparison tables
+  - Trade-off tables (| Factor | Behavior |) are effective for summarizing algorithm properties
+  - Buddy system's XOR trick for finding buddies is elegant — worth a worked address example
+  - Slab allocators are kernel-specific but important context: they're how Linux manages common objects
+  - Forward references to paging (next story US-012) are natural here: fixed-size allocation avoids fragmentation
+---
