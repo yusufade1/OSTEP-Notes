@@ -197,3 +197,19 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - The "paging vs segmentation" comparison table pattern is effective for contrasting mechanisms
   - Paging notes connect to both segmentation (what it replaces) and free-space management (what it simplifies)
 ---
+
+## 2026-01-25 - US-013
+- Created atomic notes: The TLB Caches Address Translations for Fast Access, TLB Hits Bypass Memory While Misses Consult the Page Table, Hardware-Managed and Software-Managed TLBs Differ in Miss Handling, TLB Entries Store VPN PFN and Control Fields Including ASID, Context Switches Require TLB Flush or ASID Tagging, TLB Replacement Policies Choose Which Entry to Evict
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (380-450), ≥2 body wikilinks, ≥6 related entries
+- Hardware/Software TLB note includes MIPS TLB miss handler assembly from OSTEP
+- Context switch note cross-links to scheduling (cache affinity, MQMS) and explains flush vs ASID trade-off
+- Prerequisites chain: page table + PTE → TLB concept → TLB hit/miss → hardware/software TLBs + TLB contents → context switch handling → replacement policies
+- Files changed: 6 new files in Virtualization/
+- **Learnings for future iterations:**
+  - TLBs is OSTEP Ch. 19 (PRD says "Ch 15" — story numbering, not OSTEP chapter)
+  - The TLB chapter is the bridge between paging mechanism (Ch. 18) and paging optimization (Ch. 20 smaller page tables)
+  - Context switch TLB handling connects memory virtualization to scheduling — this is a key cross-theme link the PRD requires in US-038
+  - ASID size (8 bits = 256 values) creates interesting edge case behavior with many processes
+  - The OS/hardware split pattern continues: hardware handles TLB hit (fast path), OS/hardware handles miss (depending on architecture)
+  - Replacement policy matters less for TLBs than for page replacement (99% hit rate makes miss policy less impactful)
+---
