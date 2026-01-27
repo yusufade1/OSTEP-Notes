@@ -13,7 +13,6 @@ prerequisites:
   - "[[A Process is a Running Program]]"
   - "[[Process States - Ready Running and Blocked]]"
 ---
-
 # Process Data Structures - PCB Registers and Memory Image
 
 > [!SUMMARY]

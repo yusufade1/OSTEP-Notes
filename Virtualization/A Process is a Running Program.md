@@ -11,7 +11,6 @@ related:
   - "[[Virtualization MOC]]"
 prerequisites: []
 ---
-
 # A Process is a Running Program
 
 > [!SUMMARY]

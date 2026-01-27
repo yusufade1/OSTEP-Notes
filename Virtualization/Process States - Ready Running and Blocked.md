@@ -12,7 +12,6 @@ related:
 prerequisites:
   - "[[A Process is a Running Program]]"
 ---
-
 # Process States - Ready Running and Blocked
 
 > [!SUMMARY]
