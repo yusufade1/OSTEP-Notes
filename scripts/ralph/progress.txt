@@ -189,7 +189,7 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - VPN+Offset note includes full worked example: 16-bit address 0x3A5B → VPN=3 → PFN=7 → physical 0x7A5B
 - PTE note covers all control bits: valid, present, R/W/X, dirty, accessed with x86 bit layout
 - Prerequisites chain: external fragmentation + segmentation → paging concept → page table → PTE → VPN/offset; segmentation → paging advantages
-- Files changed: 5 files in Virtualization/
+- Files changed: 5 new files in Virtualization/
 - **Learnings for future iterations:**
   - Paging Introduction is OSTEP Ch. 18 (PRD says "Ch 14" — story numbering, not OSTEP chapter)
   - The worked VPN+offset example is the pedagogical heart of this chapter — showing actual bit manipulation makes translation concrete
@@ -400,3 +400,18 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Amortization is the key mathematical concept behind the large file exception — worth emphasizing in notes
   - Sub-block optimization shows the trade-off between metadata complexity and storage efficiency
   - When editing existing files created by previous sessions, check wikilink titles against actual filenames to avoid broken links
+---
+
+## 2026-01-28 - US-030
+- Created atomic notes: The Crash Consistency Problem Arises from Partial Disk Updates, Crash Scenarios Involve Mismatched Metadata and Data Updates, fsck Recovers File System Integrity via Post-Crash Scanning, Journaling Provides Crash Consistency via Write-Ahead Logging, Journal Structure Organizes Transactions with Transaction Blocks, Journal Checkpointing Reclaims Log Space After Successful Writes, Metadata-Only Journaling Optimizes Performance by Excluding Data Blocks, Ordered Journaling Protects Data Integrity by Sequencing Data Writes
+- Created chapter overview: Persistence/Crash Consistency - Chapter Overview.md
+- All notes have valid YAML (validated with python-yaml), [!SUMMARY] callouts, 200-500 words (270-339), ≥2 wikilinks
+- Prerequisites chain: VSFS implementation -> crash consistency problem -> crash scenarios / fsck / journaling -> journal structure / checkpointing / metadata-only -> ordered journaling
+- Files changed: 9 new files in Persistence/, updated Persistence/Persistence MOC.md, Persistence/AGENTS.md, prd.json
+- **Learnings for future iterations:**
+  - Crash Consistency is OSTEP Ch. 42 (PRD says "Ch 36" — story numbering)
+  - YAML validation with `yaml.safe_load()` requires bulleted list format for multi-link fields like `related` or `prerequisites` if they contain brackets; single-line comma-separated brackets fail
+  - The "four-step journaling lifecycle" (Journal -> Commit -> Checkpoint -> Free) is the most important conceptual bridge to explain
+  - Information leakage via stale data is the primary motivation for Ordered Journaling over simple Metadata Journaling
+  - Forward-links to LFS (US-031) are included in the overview and atomic notes
+---
