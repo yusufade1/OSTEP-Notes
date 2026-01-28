@@ -243,3 +243,18 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Thrashing and Working Set Model are theoretically coupled; one explains the problem, the other the solution
   - Deleted a profane garbage file found in the directory - keeping the repository clean is part of the job
 ---
+## 2026-01-28 - US-016
+- Created atomic notes: Thread vs Process - Shared Address Space, Why Use Threads - Parallelism and Responsiveness, Thread Creation and Execution Model, Race Conditions lead to Non-Deterministic Behavior, Critical Sections Require Mutual Exclusion
+- Created chapter overview: Concurrency/Threads - Chapter Overview.md
+- Created helper file: Concurrency/AGENTS.md
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Code examples: shared counter race condition (Race Conditions note)
+- Prerequisites chain: thread vs process → thread creation → race conditions → critical sections
+- Files changed: 7 new files in Concurrency/
+- **Learnings for future iterations:**
+  - Threads Introduction is OSTEP Ch. 26 (PRD says "Ch 20" — story numbering)
+  - The "shared address space but private stack" distinction is the most critical concept to nail early
+  - Race conditions are best explained with the "load-update-store" disassembly sequence
+  - Volatile keyword is essential for C examples to prevent compiler optimization from masking races (added to AGENTS.md)
+  - Forward references to not-yet-created notes (e.g., Locks) are necessary and acceptable
+---
