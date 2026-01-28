@@ -17,6 +17,7 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - Memory layout diagrams use `+--+` box-drawing with labeled annotations (e.g., `<- base_A = 16 KB`) for physical memory visualization
 - The OS/hardware split pattern (hardware=fast path per-access, OS=lifecycle events) is a recurring theme across virtualization chapters
 - OSTEP uses a "limitation → next mechanism" progression: base-and-bounds (internal waste) → segmentation (external fragmentation) → paging (fixed-size units)
+- Use consistent reference strings/data sets when comparing algorithms (e.g., page replacement policies) across multiple notes
 
 ---
 
@@ -227,4 +228,18 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Page table chunks being page-sized is a key design insight—it enables using the same allocator for page tables and data
   - Hybrid paging-segmentation reintroduces external fragmentation at the kernel level, which explains why it lost to pure multi-level
   - The 4 MB per process calculation (32-bit, 4 KB pages, 4-byte PTEs) is the hook that motivates all solutions
+---
+
+## 2026-01-28 - US-015
+- Created atomic notes: Swap Space Extends Memory Beyond Physical Limits, Page Faults Trigger the Swap Mechanism, The Present Bit Distinguishes Memory-Resident from Swapped Pages, Optimal Page Replacement Sets the Theoretical Lower Bound, FIFO Page Replacement Evicts the Oldest Page, LRU Approximates Optimal by Evicting Least Recently Used Pages, The Clock Algorithm Approximates LRU with a Reference Bit, Thrashing Occurs When Working Set Exceeds Physical Memory, The Working Set Model Predicts Memory Demands
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Replacement policy notes (Optimal, FIFO, LRU, Clock) all use the same reference string (0,1,2,3,0,1,4,0,1,2,3,4) for direct comparison
+- Prerequisites chain: paging/TLB → swap space → page faults → present bit → replacement policies
+- Files changed: 9 new files in Virtualization/ (plus deleted duplicate/garbage files)
+- **Learnings for future iterations:**
+  - Swapping Mechanisms/Policies are OSTEP Ch. 21-22 (PRD says "Ch 17-18" — story numbering)
+  - Using a consistent reference string across all replacement policy notes is crucial for pedagogical comparison
+  - The "Present Bit" note is the hardware/software interface key: it bridges the concept of swapping with the mechanism of paging
+  - Thrashing and Working Set Model are theoretically coupled; one explains the problem, the other the solution
+  - Deleted a profane garbage file found in the directory - keeping the repository clean is part of the job
 ---

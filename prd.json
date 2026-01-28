@@ -1,6 +1,6 @@
 {
   "project": "OSTEP-PKM",
-  "branchName": "ralph/ostep-pkm-conversion",
+  "branchName": "vert-cont"
   "description": "Convert all ~50 OSTEP chapters into atomic Obsidian PKM notes organized into Virtualization, Concurrency, and Persistence folders with wikilinks, prerequisites, and quality gates.",
   "userStories": [
     {
@@ -230,7 +230,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 15,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
