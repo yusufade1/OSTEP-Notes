@@ -24,3 +24,9 @@
 ## Semaphore Patterns
 - **POSIX vs Conceptual:** Note that POSIX definitions often allow negative semaphore values (counting waiters), while implementations built on CVs (like Zemaphores) often keep the value $\ge 0$ and rely on the CV queue for waiters. Both are valid semantics but implementation details differ.
 - **Initialization:** The initial value determines behavior (1 for lock, 0 for ordering/CV).
+
+## Bug & Anti-Pattern Notes
+- **Problem -> Solution Structure:** When documenting concurrency bugs (e.g., Atomicity Violations, Deadlocks), use a clear structure:
+  1.  **The Problem:** Define the bug and show a code example of how it manifests.
+  2.  **The Solution:** Explain the fix (e.g., add a lock, enforce ordering) and show the corrected code.
+- **Real-World Examples:** Use concrete cases from OSTEP (MySQL, Mozilla, etc.) to ground theoretical bugs in reality.

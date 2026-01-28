@@ -309,3 +309,31 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Explaining "Why if is broken" requires a specific race scenario (consumer wakes, producer interrupts) which is tricky to describe concisely
   - Covering conditions are a rare but necessary use case for broadcast — good to distinguish from the common signal case
 ---
+
+## 2026-01-28 - US-021
+- Created atomic notes: Semaphores Define wait and post Operations, Binary Semaphores Act as Mutual Exclusion Locks, Semaphores Can Order Threads Like Condition Variables, Reader-Writer Locks Allow Multiple Readers, The Dining Philosophers Problem Illustrates Deadlock, Zemaphores Implement Semaphores with Locks and CVs
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Each note includes C code (sem_wait/post, binary lock, ordering pattern, RW lock struct, Dining Philosophers solution, Zemaphore struct)
+- Prerequisites chain: Critical Sections -> Semaphores -> Binary Semaphores/Reader-Writer/Dining Philosophers
+- Files changed: 6 new files in Concurrency/, updated Concurrency/AGENTS.md
+- **Learnings for future iterations:**
+  - Semaphores is OSTEP Ch. 25 (PRD says "Ch 25" — finally matches!)
+  - The distinction between POSIX semaphores (value can be < 0) and the conceptual definition (value >= 0 with queue) is important for implementation details
+  - Semaphores are "unified" but often less safe/structured than Locks/CVs (easy to forget a post, or mismatch wait/post)
+  - The Reader-Writer lock implementation is a great example of composing semaphores for complex behavior
+  - Dining Philosophers is the canonical deadlock example; breaking the circular dependency is the canonical solution
+---
+
+## 2026-01-28 - US-022
+- Created atomic notes: Atomicity Violation Bugs Require Locks for Protection, Order Violation Bugs Require Condition Variables for Enforcement, Deadlock Occurs When Threads Wait on Each Other Circularly, Deadlock Prevention Breaks One of the Four Necessary Conditions, Deadlock Avoidance Uses Knowledge to Sidestep Unsafe States, Livelock Occurs When Threads Actively Impede Each Other
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Real-world examples included: MySQL (Atomicity), Mozilla (Order)
+- Updated Concurrency/AGENTS.md with "Problem -> Solution" documentation pattern
+- Prerequisites chain: Semaphores/CVs -> Deadlock/Bugs -> Prevention/Avoidance/Livelock
+- Files changed: 6 new files in Concurrency/, updated Concurrency/AGENTS.md
+- **Learnings for future iterations:**
+  - OSTEP Ch. 26 ("Concurrency Bugs") follows a distinct "Problem -> Solution" pedagogical pattern that maps well to notes
+  - Livelock is effectively the "evil twin" of Deadlock (running but stuck vs stopped)
+  - The "Four Conditions" of deadlock are a perfect structured list for a note
+  - Banker's Algorithm is a theoretical outlier in OSTEP - explicitly mentioned as "rarely used"
+---
