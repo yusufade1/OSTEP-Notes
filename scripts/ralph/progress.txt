@@ -271,3 +271,41 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Separating the API notes into creation/joining and locks/CVs mirrors the conceptual split in the book
   - Using declarative titles with function names (e.g., "pthread_create() Starts a New Thread") makes the purpose clear in wikilinks
   - Added guideline to AGENTS.md about checking return codes in examples
+
+## 2026-01-28 - US-018
+- Created chapter overview: Concurrency/Locks - Chapter Overview.md
+- Created atomic notes: Lock Design Goals - Mutual Exclusion Fairness and Performance, Spin Locks rely on Busy Waiting, Test-and-Set Instruction Enables Atomic Locking, Compare-and-Swap Provides Powerful Atomic Update, Ticket Locks Ensure Fairness with Fetch-and-Add, Yielding Locks Avoid Spinning but Incur Context Switches, Queue-Based Locks Put Waiting Threads to Sleep, Two-Phase Locks Combine Spinning and Sleeping
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, >=2 wikilinks
+- Code examples: spin lock (TestAndSet, CAS), ticket lock (FetchAndAdd), queue-based lock (park/unpark), yielding lock (sched_yield)
+- Prerequisites chain: Critical Sections -> Lock Design Goals -> Hardware Primitives -> Spin Locks -> Advanced Locks
+- Files changed: 9 new files in Concurrency/, updated Concurrency/AGENTS.md
+- **Learnings for future iterations:**
+  - Locks is OSTEP Ch. 28 (PRD says "Ch 22" — story numbering)
+  - The distinction between hardware primitives (Test-and-Set, CAS) and OS primitives (park/unpark) is crucial for the "slow path" explanation
+  - Ticket locks are the perfect example of "fairness" in locking
+  - Linux futexes are the real-world implementation of the theoretical "Two-Phase Lock"
+
+## 2026-01-28 - US-019
+- Created atomic notes: Concurrent Counters Scale with Approximate Counting, Concurrent Linked Lists Enable Parallel Access, Concurrent Queues Use Two Locks for Head and Tail, Concurrent Hash Tables Scale with Per-Bucket Locking
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Each note includes C code showing the locking strategy (Global/Local counters, Hand-over-hand, Two-lock queue, Lock striping)
+- Prerequisites chain: Lock Implementations -> Counters/Lists -> Queues/HashTables
+- Files changed: 4 new files in Concurrency/
+- **Learnings for future iterations:**
+  - Concurrent Data Structures is OSTEP Ch. 29 (PRD says "Ch 23" — story numbering)
+  - The "approximate counter" concept is a perfect example of the accuracy-vs-performance trade-off
+  - Hand-over-hand locking is a great "failed attempt" pedagogical tool — showing why it's slow is as important as showing what works
+  - The hash table implementation is elegant because it composes simple parts (concurrent lists) into a complex whole (concurrent map)
+  - Queue's "dummy node" trick is subtle but essential for preventing head/tail race conditions
+## 2026-01-28 - US-020
+- Created atomic notes: Condition Variables Allow Threads to Sleep and Wake, Always Use While Loops with Condition Variables, Producer-Consumer Problem Solved with Condition Variables, Covering Conditions Use Broadcast to Wake All Threads
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Each note includes C code (API usage, Broken if-check, Producer-Consumer solution, Broadcast example)
+- Prerequisites chain: Critical Sections -> Condition Variables -> While Loop Pattern -> Producer-Consumer/Covering Conditions
+- Files changed: 4 new files in Concurrency/, updated Concurrency/AGENTS.md
+- **Learnings for future iterations:**
+  - Condition Variables is OSTEP Ch. 30 (PRD says "Ch 24" — story numbering)
+  - The "While Loop" rule is the single most important practical takeaway for CVs
+  - Explaining "Why if is broken" requires a specific race scenario (consumer wakes, producer interrupts) which is tricky to describe concisely
+  - Covering conditions are a rare but necessary use case for broadcast — good to distinguish from the common signal case
+---

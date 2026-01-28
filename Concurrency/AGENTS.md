@@ -16,3 +16,7 @@
   - **Hardware Primitives:** Test-and-Set, CAS, Fetch-and-Add (universally available in some form).
   - **OS Primitives:** park/unpark (Solaris), futex (Linux). The specific API matters less than the concept (sleep/wake).
 - Pseudocode for locks should clearly separate the "fast path" (atomic check) from the "slow path" (yielding/sleeping).
+
+## Condition Variable Patterns
+- **Always use `while` loops**, never `if` statements, when waiting on a condition variable. This handles Mesa semantics and spurious wakeups.
+- **Producer-Consumer problems** require **two** condition variables (e.g., `empty` and `fill`) to prevent the "Wakeup One" bug where a producer wakes a producer (or consumer wakes consumer) leading to deadlock.
