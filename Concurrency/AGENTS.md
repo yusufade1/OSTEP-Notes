@@ -20,3 +20,7 @@
 ## Condition Variable Patterns
 - **Always use `while` loops**, never `if` statements, when waiting on a condition variable. This handles Mesa semantics and spurious wakeups.
 - **Producer-Consumer problems** require **two** condition variables (e.g., `empty` and `fill`) to prevent the "Wakeup One" bug where a producer wakes a producer (or consumer wakes consumer) leading to deadlock.
+
+## Semaphore Patterns
+- **POSIX vs Conceptual:** Note that POSIX definitions often allow negative semaphore values (counting waiters), while implementations built on CVs (like Zemaphores) often keep the value $\ge 0$ and rely on the CV queue for waiters. Both are valid semantics but implementation details differ.
+- **Initialization:** The initial value determines behavior (1 for lock, 0 for ordering/CV).
