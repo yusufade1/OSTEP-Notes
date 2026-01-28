@@ -30,3 +30,7 @@
   1.  **The Problem:** Define the bug and show a code example of how it manifests.
   2.  **The Solution:** Explain the fix (e.g., add a lock, enforce ordering) and show the corrected code.
 - **Real-World Examples:** Use concrete cases from OSTEP (MySQL, Mozilla, etc.) to ground theoretical bugs in reality.
+
+## Event-Based Concurrency Patterns
+- **The Golden Rule:** Explicitly state "No Blocking Calls" in every context involving event loops. This is the defining constraint of the model.
+- **Stack Ripping:** Use the "Before (Procedural) vs After (Event-driven)" code comparison pattern to illustrate how state management shifts from the stack (automatic) to the heap (manual).
