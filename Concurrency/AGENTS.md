@@ -9,3 +9,4 @@
 ## Code Examples
 - Most concurrency examples use `pthread` API.
 - Use `volatile` for shared variables in C examples to prevent compiler optimization from hiding race conditions (pedagogical accuracy).
+- **Always check return codes** for pthread functions (e.g., using `assert()` or wrapper functions) to ensure robustness in examples.

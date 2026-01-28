@@ -258,3 +258,16 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - Volatile keyword is essential for C examples to prevent compiler optimization from masking races (added to AGENTS.md)
   - Forward references to not-yet-created notes (e.g., Locks) are necessary and acceptable
 ---
+
+## 2026-01-28 - US-017
+- Created atomic notes: pthread_create() Starts a New Thread, pthread_join() Waits for Thread Completion, pthread_mutex_lock() and unlock() Protect Critical Sections, pthread_cond_wait() and signal() Coordinate Threads
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (439-486), ≥2 wikilinks
+- Each note includes a complete, compilable C code example demonstrating the API usage
+- Prerequisites chain: Thread Creation → pthread_create → pthread_join; Critical Sections → pthread_mutex → pthread_cond
+- Files changed: 4 new files in Concurrency/, updated Concurrency/AGENTS.md
+- **Learnings for future iterations:**
+  - Thread API is OSTEP Ch. 27 (PRD says "Ch 21" — story numbering)
+  - The \`void *\` pattern in \`pthread_create\` and \`pthread_join\` is a key concept to explain early
+  - Separating the API notes into creation/joining and locks/CVs mirrors the conceptual split in the book
+  - Using declarative titles with function names (e.g., "pthread_create() Starts a New Thread") makes the purpose clear in wikilinks
+  - Added guideline to AGENTS.md about checking return codes in examples
