@@ -189,7 +189,7 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
 - VPN+Offset note includes full worked example: 16-bit address 0x3A5B → VPN=3 → PFN=7 → physical 0x7A5B
 - PTE note covers all control bits: valid, present, R/W/X, dirty, accessed with x86 bit layout
 - Prerequisites chain: external fragmentation + segmentation → paging concept → page table → PTE → VPN/offset; segmentation → paging advantages
-- Files changed: 5 new files in Virtualization/
+- Files changed: 5 files in Virtualization/
 - **Learnings for future iterations:**
   - Paging Introduction is OSTEP Ch. 18 (PRD says "Ch 14" — story numbering, not OSTEP chapter)
   - The worked VPN+offset example is the pedagogical heart of this chapter — showing actual bit manipulation makes translation concrete
@@ -337,3 +337,66 @@ Started: Sat Jan 24 07:09:57 PM EET 2026
   - The "Four Conditions" of deadlock are a perfect structured list for a note
   - Banker's Algorithm is a theoretical outlier in OSTEP - explicitly mentioned as "rarely used"
 ---
+
+## 2026-01-28 - US-023
+- Created atomic notes: Event-Based Concurrency Relies on an Event Loop, The select() and poll() API Monitors File Descriptors, Blocking Calls Freeze Event-Based Systems, Asynchronous I/O Enables Non-Blocking Operations, Manual Stack Management Complicates Event-Based Programming
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Updated Concurrency/AGENTS.md with Event-Based Concurrency Patterns
+- Prerequisites chain: Thread Creation -> Event Loop -> Blocking Calls -> Async I/O / Stack Ripping
+- Files changed: 5 new files in Concurrency/, updated Concurrency/AGENTS.md
+- **Learnings for future iterations:**
+  - Event-Based Concurrency is OSTEP Ch. 27 (PRD says "Ch 27" — matches!)
+  - The "Golden Rule" (No Blocking) is the defining constraint of this model and must be emphasized
+  - Stack Ripping is a great pedagogical concept to contrast manual vs automatic (threaded) state management
+  - select() vs epoll() is a good example of "historical vs modern" implementation details
+---
+
+## 2026-01-28 - US-024
+- Created chapter overview: Persistence/IO and Storage - Chapter Overview.md
+- Created atomic notes: IO Architecture Connects CPU Memory and Devices via Bus Hierarchy, Device Interface Exposes Registers for Status Command and Data, Polling and Interrupts Trade CPU Cycles for Responsiveness, DMA Offloads Data Transfer Tasks from the Main CPU, Device Drivers Abstract Hardware Details from the OS
+- Created helper file: Persistence/AGENTS.md
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Prerequisites chain: System Calls -> IO Architecture -> Device Interface -> Polling/Interrupts -> DMA
+- Files changed: 7 new files in Persistence/
+- **Learnings for future iterations:**
+  - I/O Devices is OSTEP Ch. 36 (PRD says "Ch 30" — story numbering)
+  - The "Problem -> Solution" evolution (Polling -> Interrupts -> DMA) is a very strong pedagogical pattern in this chapter
+  - Hierarchical bus structure explains *why* we have different interfaces (memory bus vs PCI vs USB)
+  - Device drivers are the "glue" code of the OS, accounting for the bulk of the codebase
+
+## 2026-01-28 - US-025
+- Created atomic notes: Disk Geometry Defines the Physical Structure of Hard Drives, Disk Access Time Depends on Seek Rotation and Transfer, SSTF Scheduling Prioritizes Shortest Seek Time, SCAN and C-SCAN Scheduling Service Requests in Sweeps, SPTF Scheduling Considers Both Seek and Rotation, IO Merging Combines Adjacent Requests to Improve Performance
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Scheduling notes (SSTF, SCAN/C-SCAN) include worked seek-sequence examples
+- Prerequisites chain: IO Architecture -> Disk Geometry -> Disk Access Time -> Scheduling/IO Merging
+- Files changed: 6 new files in Persistence/
+- **Learnings for future iterations:**
+  - Hard Disk Drives is OSTEP Ch. 37 (PRD says "Ch 31" — story numbering)
+  - Splitting scheduling algorithms into separate notes allows for clearer worked examples without blowing the word count
+  - "IO Merging" works well as a small, standalone optimization note
+  - Distinguishing between "Seek Only" (SSTF/SCAN) and "Seek + Rotation" (SPTF) is the key conceptual leap in this chapter
+
+## 2026-01-28 - US-026
+- Created atomic notes: RAID Uses Redundancy to Improve Performance and Reliability, RAID-0 Striping Maximizes Performance but Lowers Reliability, RAID-1 Mirroring Guarantees Reliability at High Cost, RAID-4 Uses a Dedicated Parity Disk, RAID-5 Rotates Parity to Eliminate Bottlenecks
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Each RAID level note includes capacity/reliability/performance analysis
+- Prerequisites chain: RAID concept -> RAID-0/1 -> RAID-4 -> RAID-5
+- Files changed: 5 new files in Persistence/
+- **Learnings for future iterations:**
+  - RAID is OSTEP Ch. 38 (PRD says "Ch 32" — story numbering)
+  - The "N disks, B capacity" analysis framework needs to be consistent across all notes for easy comparison
+  - The "Small Write Problem" in RAID-4/5 is the critical performance concept to explain
+  - RAID-10 (not explicitly requested but often mentioned) fits well as a side note in RAID-1 or as a future extension
+---
+## 2026-01-28 - US-029
+- Created atomic notes: FFS Motivation - The Performance Problem of Old File Systems, FFS Large File Exception Prevents Single Group Saturation, Sub-block Optimization Reduces Internal Fragmentation for Small Files
+- Updated existing notes: FFS Cylinder Groups Improve Locality, FFS Allocation Policies Optimize Seek Times (added links and cross-references)
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (233-393), ≥2 wikilinks
+- Prerequisites chain: VSFS implementation → FFS Motivation → Cylinder Groups → Allocation Policies → Large File Exception / Sub-block Optimization
+- Files changed: 3 new files in Persistence/, updated Persistence/AGENTS.md, updated 2 existing Persistence files
+- **Learnings for future iterations:**
+  - FFS is OSTEP Ch. 41 (PRD says "Ch 35" — story numbering)
+  - The "Policy vs Exception" pattern is a strong narrative for FFS: strict locality (policy) is broken for large files (exception) to preserve overall system health
+  - Amortization is the key mathematical concept behind the large file exception — worth emphasizing in notes
+  - Sub-block optimization shows the trade-off between metadata complexity and storage efficiency
+  - When editing existing files created by previous sessions, check wikilink titles against actual filenames to avoid broken links

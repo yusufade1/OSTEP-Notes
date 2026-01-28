@@ -7,6 +7,8 @@
   - New Problem: Copy overhead
   - Solution 2: DMA (offloads copy)
   Structure notes to highlight this evolutionary path.
+- **Locality-Aware Design:** FFS notes should emphasize the "Disk Awareness" principle—how physical geometry (cylinders, tracks) dictates software allocation policies (cylinder groups).
+- **Policy vs. Exception:** FFS uses strong general policies (locality) but must implement specific "exceptions" (large files) to prevent system-wide performance degradation (group saturation).
 
 ## Code Standards
 - **Mock Interfaces:** When showing device driver code, use simplified mock interfaces (like `device_read_register()`) rather than complex real-world kernel structures unless specifically illustrating a Linux/Unix struct.
