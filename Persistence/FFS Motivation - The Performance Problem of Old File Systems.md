@@ -1,9 +1,19 @@
 ---
-type: atomic
-source: OSTEP Ch. 41
-tags: [file-system, performance, fragmentation, ffs, persistence]
-related: [[FFS Cylinder Groups Improve Locality]], [[Disk Access Time Depends on Seek Rotation and Transfer]], [[VSFS File Read Path Traces Inode to Data]]
-prerequisites: [[VSFS File Read Path Traces Inode to Data]], [[Disk Access Time Depends on Seek Rotation and Transfer]]
+type: mechanism
+source: "OSTEP Ch. 41: Locality and The Fast File System"
+tags:
+  - file-system
+  - performance
+  - fragmentation
+  - ffs
+  - persistence
+related:
+  - "[[FFS Cylinder Groups Improve Locality]]"
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
+  - "[[VSFS File Read Path Traces Inode to Data]]"
+prerequisites:
+  - "[[VSFS File Read Path Traces Inode to Data]]"
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
 ---
 
 > [!SUMMARY]

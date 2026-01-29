@@ -1,13 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 36
-tags: [persistence, io, dma, performance]
-related: 
-  - [[Polling and Interrupts Trade CPU Cycles for Responsiveness]]
-  - [[Device Interface Exposes Registers for Status Command and Data]]
-  - [[Direct Execution Runs Programs Directly on the CPU]]
+type: mechanism
+source: "OSTEP Ch. 36: I/O Devices"
+tags:
+  - persistence
+  - io
+  - dma
+  - performance
+related:
+  - "[[Polling and Interrupts Trade CPU Cycles for Responsiveness]]"
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
+  - "[[Direct Execution Runs Programs Directly on the CPU]]"
 prerequisites:
-  - [[Polling and Interrupts Trade CPU Cycles for Responsiveness]]
+  - "[[Polling and Interrupts Trade CPU Cycles for Responsiveness]]"
 ---
 
 > [!SUMMARY]

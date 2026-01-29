@@ -1,13 +1,18 @@
 ---
 type: overview
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, journaling, persistence, chapter-overview]
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - journaling
+  - persistence
+  - chapter-overview
 related:
-  - [[Persistence MOC]]
-  - [[VSFS File Write Path Involves Allocation and Metadata Updates]]
-  - [[Log-Structured File Systems - Chapter Overview]]
+  - "[[Persistence MOC]]"
+  - "[[VSFS File Write Path Involves Allocation and Metadata Updates]]"
+  - "[[Log-Structured File Systems - Chapter Overview]]"
 prerequisites:
-  - [[VSFS File Write Path Involves Allocation and Metadata Updates]]
+  - "[[VSFS File Write Path Involves Allocation and Metadata Updates]]"
 ---
 
 > [!SUMMARY]

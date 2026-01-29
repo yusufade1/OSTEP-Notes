@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 41
-tags: [file-system, implementation, allocation, persistence]
-related: [[FFS Cylinder Groups Improve Locality]], [[Directories Map Names to Inode Numbers]], [[FFS Large File Exception Prevents Single Group Saturation]]
-prerequisites: [[FFS Cylinder Groups Improve Locality]]
+type: mechanism
+source: "OSTEP Ch. 41: Locality and The Fast File System"
+tags:
+  - file-system
+  - implementation
+  - allocation
+  - persistence
+related:
+  - "[[FFS Cylinder Groups Improve Locality]]"
+  - "[[Directories Map Names to Inode Numbers]]"
+  - "[[FFS Large File Exception Prevents Single Group Saturation]]"
+prerequisites:
+  - "[[FFS Cylinder Groups Improve Locality]]"
 ---
 
 > [!SUMMARY]

@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 37
-tags: [scheduling, disk-scheduling, algorithm, persistence]
-related: [[SSTF Scheduling Prioritizes Shortest Seek Time]], [[SPTF Scheduling Considers Both Seek and Rotation]]
-prerequisites: [[SSTF Scheduling Prioritizes Shortest Seek Time]]
+type: mechanism
+source: "OSTEP Ch. 37: Hard Disk Drives"
+tags:
+  - scheduling
+  - disk-scheduling
+  - algorithm
+  - persistence
+related:
+  - "[[SSTF Scheduling Prioritizes Shortest Seek Time]]"
+  - "[[SPTF Scheduling Considers Both Seek and Rotation]]"
+prerequisites:
+  - "[[SSTF Scheduling Prioritizes Shortest Seek Time]]"
 ---
 
 > [!SUMMARY]
@@ -16,9 +23,9 @@ prerequisites: [[SSTF Scheduling Prioritizes Shortest Seek Time]]
 *   **Cons:** Requests arriving just behind the head must wait for the arm to reach the end and come back (high variance in response time).
 
 **Example Trace (Queue: 10, 22, 20, 2, 40 | Head: 25 | Dir: Increasing):**
-1.  Sweep Up: $25 	o 40$.
+1.  Sweep Up: $25 \to 40$.
 2.  Reverse at 40 (assuming no requests $>40$).
-3.  Sweep Down: $40 	o 22 	o 20 	o 10 	o 2$.
+3.  Sweep Down: $40 \to 22 \to 20 \to 10 \to 2$.
 **Order:** 25, 40, 22, 20, 10, 2.
 
 ### C-SCAN (Circular SCAN)
@@ -28,9 +35,9 @@ prerequisites: [[SSTF Scheduling Prioritizes Shortest Seek Time]]
 *   **Cons:** The "flyback" seek (return to start) is wasted time, though usually fast.
 
 **Example Trace (Same Queue | Head: 25 | Dir: Increasing):**
-1.  Sweep Up: $25 	o 40$.
+1.  Sweep Up: $25 \to 40$.
 2.  Reach End, Jump to 0 (logical start).
-3.  Sweep Up: $0 	o 2 	o 10 	o 20 	o 22$.
+3.  Sweep Up: $0 \to 2 \to 10 \to 20 \to 22$.
 **Order:** 25, 40, 2, 10, 20, 22.
 
 ### Comparison

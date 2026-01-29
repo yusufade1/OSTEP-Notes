@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 38
-tags: [raid, storage, parity, persistence]
-related: [[RAID Uses Redundancy to Improve Performance and Reliability]], [[RAID-5 Rotates Parity to Eliminate Bottlenecks]]
-prerequisites: [[RAID Uses Redundancy to Improve Performance and Reliability]]
+type: mechanism
+source: "OSTEP Ch. 38: Redundant Disk Arrays (RAID)"
+tags:
+  - raid
+  - storage
+  - parity
+  - persistence
+related:
+  - "[[RAID Uses Redundancy to Improve Performance and Reliability]]"
+  - "[[RAID-5 Rotates Parity to Eliminate Bottlenecks]]"
+prerequisites:
+  - "[[RAID Uses Redundancy to Improve Performance and Reliability]]"
 ---
 
 > [!SUMMARY]
@@ -19,14 +26,14 @@ If any disk fails, the missing block can be reconstructed by XORing the remainin
 ### Analysis
 Given $N$ disks with capacity $B$, sequential speed $S$, and random speed $R$:
 
-1.  **Capacity:** $(N-1) 	imes B$.
+1.  **Capacity:** $(N-1) \times B$.
     *   Only one disk's worth of capacity is lost, regardless of array size. Much cheaper than RAID-1.
 2.  **Reliability:** 1 failure tolerated.
     *   If any one disk (data or parity) fails, the system continues to function. Two failures cause data loss.
 3.  **Performance:**
-    *   **Sequential Read:** $(N-1) 	imes S$. The parity disk does not participate in reads.
-    *   **Sequential Write:** $(N-1) 	imes S$. Full stripe writes allow parity to be calculated on the fly and written in parallel.
-    *   **Random Read:** $(N-1) 	imes R$. All data disks can service requests independently.
+    *   **Sequential Read:** $(N-1) \times S$. The parity disk does not participate in reads.
+    *   **Sequential Write:** $(N-1) \times S$. Full stripe writes allow parity to be calculated on the fly and written in parallel.
+    *   **Random Read:** $(N-1) \times R$. All data disks can service requests independently.
     *   **Random Write:** $\frac{R}{2}$ (approx). **The Bottleneck.**
         *   Every random write updates a data block *and* the parity block.
         *   Since all parity blocks live on one disk, *every* write must touch that single disk. The parity disk serializes all writes.

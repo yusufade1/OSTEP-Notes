@@ -1,13 +1,18 @@
 ---
-type: atomic
-source: OSTEP Ch. 36
-tags: [persistence, io, drivers, abstraction, os-design]
-related: 
-  - [[Device Interface Exposes Registers for Status Command and Data]]
-  - [[System Calls Transfer Control via Trap and Return-from-Trap]]
-  - [[File System Interface - Chapter Overview]]
+type: mechanism
+source: "OSTEP Ch. 36: I/O Devices"
+tags:
+  - persistence
+  - io
+  - drivers
+  - abstraction
+  - os-design
+related:
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
+  - "[[System Calls Transfer Control via Trap and Return-from-Trap]]"
+  - "[[File Systems - Chapter Overview]]"
 prerequisites:
-  - [[Device Interface Exposes Registers for Status Command and Data]]
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
 ---
 
 > [!SUMMARY]

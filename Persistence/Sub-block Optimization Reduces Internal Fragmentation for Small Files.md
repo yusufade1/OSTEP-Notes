@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 41
-tags: [file-system, implementation, efficiency, ffs, persistence]
-related: [[FFS Motivation - The Performance Problem of Old File Systems]], [[VSFS Inode Structure and Block Pointers]]
-prerequisites: [[FFS Motivation - The Performance Problem of Old File Systems]]
+type: mechanism
+source: "OSTEP Ch. 41: Locality and The Fast File System"
+tags:
+  - file-system
+  - implementation
+  - efficiency
+  - ffs
+  - persistence
+related:
+  - "[[FFS Motivation - The Performance Problem of Old File Systems]]"
+  - "[[VSFS Inode Structure and Block Pointers]]"
+prerequisites:
+  - "[[FFS Motivation - The Performance Problem of Old File Systems]]"
 ---
 
 > [!SUMMARY]

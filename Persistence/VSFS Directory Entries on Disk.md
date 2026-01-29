@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 40
-tags: [file-system, implementation, directory, persistence]
-related: [[Directories Map Names to Inode Numbers]], [[VSFS Inode Structure and Block Pointers]]
-prerequisites: [[Directories Map Names to Inode Numbers]]
+type: mechanism
+source: "OSTEP Ch. 40: File System Implementation"
+tags:
+  - file-system
+  - implementation
+  - directory
+  - persistence
+related:
+  - "[[Directories Map Names to Inode Numbers]]"
+  - "[[VSFS Inode Structure and Block Pointers]]"
+prerequisites:
+  - "[[Directories Map Names to Inode Numbers]]"
 ---
 
 > [!SUMMARY]

@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 40
-tags: [file-system, implementation, performance, persistence]
-related: [[The open() System Call Creates and Accesses Files]], [[VSFS Inode Structure and Block Pointers]]
-prerequisites: [[VSFS Inode Structure and Block Pointers]]
+type: mechanism
+source: "OSTEP Ch. 40: File System Implementation"
+tags:
+  - file-system
+  - implementation
+  - performance
+  - persistence
+related:
+  - "[[The open() System Call Creates and Accesses Files]]"
+  - "[[VSFS Inode Structure and Block Pointers]]"
+prerequisites:
+  - "[[VSFS Inode Structure and Block Pointers]]"
 ---
 
 > [!SUMMARY]

@@ -1,15 +1,19 @@
 ---
 type: overview
-source: OSTEP Ch. 36
-tags: [persistence, io, chapter-overview]
-related: 
-  - [[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]
-  - [[Device Interface Exposes Registers for Status Command and Data]]
-  - [[Polling and Interrupts Trade CPU Cycles for Responsiveness]]
-  - [[DMA Offloads Data Transfer Tasks from the Main CPU]]
-  - [[Device Drivers Abstract Hardware Details from the OS]]
+source: "OSTEP Ch. 36: I/O Devices"
+tags:
+  - persistence
+  - io
+  - chapter-overview
+related:
+  - "[[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]"
+  - "[[Direct Execution Runs Programs Directly on the CPU]]"
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
+  - "[[Polling and Interrupts Trade CPU Cycles for Responsiveness]]"
+  - "[[DMA Offloads Data Transfer Tasks from the Main CPU]]"
+  - "[[Device Drivers Abstract Hardware Details from the OS]]"
 prerequisites:
-  - [[System Calls Transfer Control via Trap and Return-from-Trap]]
+  - "[[System Calls Transfer Control via Trap and Return-from-Trap]]"
 ---
 
 > [!SUMMARY]

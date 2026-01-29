@@ -1,13 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, persistence]
+type: mechanism
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - persistence
 related:
-  - [[VSFS File Write Path Involves Allocation and Metadata Updates]]
-  - [[Journaling Provides Crash Consistency via Write-Ahead Logging]]
-  - [[fsck Recovers File System Integrity via Post-Crash Scanning]]
+  - "[[VSFS File Write Path Involves Allocation and Metadata Updates]]"
+  - "[[Journaling Provides Crash Consistency via Write-Ahead Logging]]"
+  - "[[fsck Recovers File System Integrity via Post-Crash Scanning]]"
 prerequisites:
-  - [[VSFS File Write Path Involves Allocation and Metadata Updates]]
+  - "[[VSFS File Write Path Involves Allocation and Metadata Updates]]"
 ---
 
 > [!SUMMARY]

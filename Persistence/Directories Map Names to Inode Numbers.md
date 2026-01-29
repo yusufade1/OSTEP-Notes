@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 39
-tags: [file-system, api, directory, persistence]
-related: [[Files are Named Sequences of Bytes]], [[readdir() Iterates Over Directory Entries]], [[Hard Links vs Symbolic Links]]
-prerequisites: [[Files are Named Sequences of Bytes]]
+type: concept
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - directory
+  - persistence
+related:
+  - "[[Files are Named Sequences of Bytes]]"
+  - "[[readdir() Iterates Over Directory Entries]]"
+  - "[[Hard Links vs Symbolic Links]]"
+prerequisites:
+  - "[[Files are Named Sequences of Bytes]]"
 ---
 
 > [!SUMMARY]

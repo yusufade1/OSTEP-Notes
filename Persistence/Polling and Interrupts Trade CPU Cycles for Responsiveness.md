@@ -1,14 +1,19 @@
 ---
-type: atomic
-source: OSTEP Ch. 36
-tags: [persistence, io, interrupts, polling, efficiency]
-related: 
-  - [[Device Interface Exposes Registers for Status Command and Data]]
-  - [[Context Switch Saves and Restores Process State]]
-  - [[Timer Interrupts Enable Preemptive Multitasking]]
-  - [[DMA Offloads Data Transfer Tasks from the Main CPU]]
+type: mechanism
+source: "OSTEP Ch. 36: I/O Devices"
+tags:
+  - persistence
+  - io
+  - interrupts
+  - polling
+  - efficiency
+related:
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
+  - "[[Context Switch Saves and Restores Process State]]"
+  - "[[Timer Interrupts Enable Preemptive Multitasking]]"
+  - "[[DMA Offloads Data Transfer Tasks from the Main CPU]]"
 prerequisites:
-  - [[Device Interface Exposes Registers for Status Command and Data]]
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
 ---
 
 > [!SUMMARY]

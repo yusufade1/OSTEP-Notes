@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 40
-tags: [file-system, implementation, vsfs, persistence]
-related: [[VSFS Inode Structure and Block Pointers]], [[VSFS Free Space Tracking with Bitmaps]], [[File Systems - Chapter Overview]]
-prerequisites: [[File Systems - Chapter Overview]]
+type: mechanism
+source: "OSTEP Ch. 40: File System Implementation"
+tags:
+  - file-system
+  - implementation
+  - vsfs
+  - persistence
+related:
+  - "[[VSFS Inode Structure and Block Pointers]]"
+  - "[[VSFS Free Space Tracking with Bitmaps]]"
+  - "[[File Systems - Chapter Overview]]"
+prerequisites:
+  - "[[File Systems - Chapter Overview]]"
 ---
 
 > [!SUMMARY]

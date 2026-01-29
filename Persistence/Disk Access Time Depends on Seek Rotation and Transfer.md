@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 37
-tags: [performance, hard-disk, latency, persistence]
-related: [[Disk Geometry Defines the Physical Structure of Hard Drives]], [[SSTF Scheduling Prioritizes Shortest Seek Time]], [[SPTF Scheduling Considers Both Seek and Rotation]]
-prerequisites: [[Disk Geometry Defines the Physical Structure of Hard Drives]]
+type: mechanism
+source: "OSTEP Ch. 37: Hard Disk Drives"
+tags:
+  - performance
+  - hard-disk
+  - latency
+  - persistence
+related:
+  - "[[Disk Geometry Defines the Physical Structure of Hard Drives]]"
+  - "[[SSTF Scheduling Prioritizes Shortest Seek Time]]"
+  - "[[SPTF Scheduling Considers Both Seek and Rotation]]"
+prerequisites:
+  - "[[Disk Geometry Defines the Physical Structure of Hard Drives]]"
 ---
 
 > [!SUMMARY]
@@ -21,13 +29,13 @@ $$ T_{I/O} = T_{seek} + T_{rotation} + T_{transfer} $$
 ### Rotational Latency
 Once the head is on the correct track, it must wait for the target sector to rotate under the head.
 *   **Rotational latency** depends on the RPM.
-*   Average latency is half the time of a full rotation ($T_{rotation} = \frac{1}{2} 	imes \frac{60}{RPM}$).
+*   Average latency is half the time of a full rotation ($T_{rotation} = \frac{1}{2} \times \frac{60}{RPM}$).
 *   For a 7200 RPM drive, a full rotation takes ~8.3 ms, so average latency is ~4.15 ms.
 
 ### Transfer Time
 **Transfer time** is the time to actually read or write the data as it passes under the head. This is the fastest component, determined by the drive's data rate and the size of the request.
 
-$$ T_{transfer} = \frac{	ext{Size of Request}}{	ext{Transfer Rate}} $$
+$$ T_{transfer} = \frac{\text{Size of Request}}{\text{Transfer Rate}} $$
 
 ### The Disk Cache (Track Buffer)
 Drives include a small amount of RAM (e.g., 64 MB) called the **disk cache** or **track buffer**.

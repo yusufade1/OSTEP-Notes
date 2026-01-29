@@ -1,9 +1,19 @@
 ---
-type: atomic
-source: OSTEP Ch. 41
-tags: [file-system, implementation, locality, performance, persistence]
-related: [[VSFS Disk Layout - Superblock Bitmaps and Regions]], [[FFS Allocation Policies Optimize Seek Times]], [[Disk Access Time Depends on Seek Rotation and Transfer]], [[FFS Motivation - The Performance Problem of Old File Systems]]
-prerequisites: [[VSFS Disk Layout - Superblock Bitmaps and Regions]]
+type: mechanism
+source: "OSTEP Ch. 41: Locality and The Fast File System"
+tags:
+  - file-system
+  - implementation
+  - locality
+  - performance
+  - persistence
+related:
+  - "[[VSFS Disk Layout - Superblock Bitmaps and Regions]]"
+  - "[[FFS Allocation Policies Optimize Seek Times]]"
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
+  - "[[FFS Motivation - The Performance Problem of Old File Systems]]"
+prerequisites:
+  - "[[VSFS Disk Layout - Superblock Bitmaps and Regions]]"
 ---
 
 > [!SUMMARY]

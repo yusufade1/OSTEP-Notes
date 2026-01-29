@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 37
-tags: [scheduling, disk-scheduling, algorithm, persistence]
-related: [[Disk Access Time Depends on Seek Rotation and Transfer]], [[SSTF Scheduling Prioritizes Shortest Seek Time]]
-prerequisites: [[Disk Access Time Depends on Seek Rotation and Transfer]]
+type: mechanism
+source: "OSTEP Ch. 37: Hard Disk Drives"
+tags:
+  - scheduling
+  - disk-scheduling
+  - algorithm
+  - persistence
+related:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
+  - "[[SSTF Scheduling Prioritizes Shortest Seek Time]]"
+prerequisites:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
 ---
 
 > [!SUMMARY]

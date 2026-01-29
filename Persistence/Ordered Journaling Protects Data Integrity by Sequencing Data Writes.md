@@ -1,12 +1,15 @@
 ---
-type: atomic
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, journaling]
+type: mechanism
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - journaling
 related:
-  - [[Metadata-Only Journaling Optimizes Performance by Excluding Data Blocks]]
-  - [[Log-Structured File Systems - Chapter Overview]]
+  - "[[Metadata-Only Journaling Optimizes Performance by Excluding Data Blocks]]"
+  - "[[Log-Structured File Systems - Chapter Overview]]"
 prerequisites:
-  - [[Metadata-Only Journaling Optimizes Performance by Excluding Data Blocks]]
+  - "[[Metadata-Only Journaling Optimizes Performance by Excluding Data Blocks]]"
 ---
 
 > [!SUMMARY]

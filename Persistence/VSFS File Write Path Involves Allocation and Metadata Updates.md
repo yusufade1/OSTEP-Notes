@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 40
-tags: [file-system, implementation, performance, persistence]
-related: [[fsync() Forces Writes to Persistent Storage]], [[VSFS Free Space Tracking with Bitmaps]]
-prerequisites: [[VSFS File Read Path Traces Inode to Data]]
+type: mechanism
+source: "OSTEP Ch. 40: File System Implementation"
+tags:
+  - file-system
+  - implementation
+  - performance
+  - persistence
+related:
+  - "[[fsync() Forces Writes to Persistent Storage]]"
+  - "[[VSFS Free Space Tracking with Bitmaps]]"
+prerequisites:
+  - "[[VSFS File Read Path Traces Inode to Data]]"
 ---
 
 > [!SUMMARY]

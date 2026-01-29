@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 37
-tags: [scheduling, disk-scheduling, algorithm, persistence]
-related: [[Disk Access Time Depends on Seek Rotation and Transfer]], [[SCAN and C-SCAN Scheduling Service Requests in Sweeps]], [[SPTF Scheduling Considers Both Seek and Rotation]]
-prerequisites: [[Disk Access Time Depends on Seek Rotation and Transfer]]
+type: mechanism
+source: "OSTEP Ch. 37: Hard Disk Drives"
+tags:
+  - scheduling
+  - disk-scheduling
+  - algorithm
+  - persistence
+related:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
+  - "[[SCAN and C-SCAN Scheduling Service Requests in Sweeps]]"
+  - "[[SPTF Scheduling Considers Both Seek and Rotation]]"
+prerequisites:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
 ---
 
 > [!SUMMARY]
@@ -36,7 +44,7 @@ Given a queue of I/O requests identified by track number, SSTF calculates the di
     *   **Select 40.** Move 2 → 40 (Seek: 38).
 
 **Total Seek Distance:** $3 + 2 + 10 + 8 + 38 = 61$.
-(Contrast with FIFO: $25 	o 10 	o 22 	o 20 	o 2 	o 40$ would be $15 + 12 + 2 + 18 + 38 = 85$).
+(Contrast with FIFO: $25 \to 10 \to 22 \to 20 \to 2 \to 40$ would be $15 + 12 + 2 + 18 + 38 = 85$).
 
 ### The Starvation Problem
 While efficient, SSTF is not fair. If the head is servicing requests on inner tracks (e.g., 10-20) and new requests continually arrive for that region, a request for an outer track (e.g., 100) may never be serviced. This phenomenon is known as **starvation**.

@@ -1,9 +1,19 @@
 ---
-type: atomic
-source: OSTEP Ch. 38
-tags: [raid, storage, reliability, performance, persistence]
-related: [[Disk Access Time Depends on Seek Rotation and Transfer]], [[RAID-0 Striping Maximizes Performance but Lowers Reliability]], [[RAID-1 Mirroring Guarantees Reliability at High Cost]]
-prerequisites: [[Disk Geometry Defines the Physical Structure of Hard Drives]], [[Disk Access Time Depends on Seek Rotation and Transfer]]
+type: mechanism
+source: "OSTEP Ch. 38: Redundant Disk Arrays (RAID)"
+tags:
+  - raid
+  - storage
+  - reliability
+  - performance
+  - persistence
+related:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
+  - "[[RAID-0 Striping Maximizes Performance but Lowers Reliability]]"
+  - "[[RAID-1 Mirroring Guarantees Reliability at High Cost]]"
+prerequisites:
+  - "[[Disk Geometry Defines the Physical Structure of Hard Drives]]"
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
 ---
 
 > [!SUMMARY]
@@ -20,7 +30,7 @@ A **RAID** system appears to the operating system as a single, large, fast, and 
 To evaluate different RAID levels, we assess three key metrics relative to a system with $N$ disks, each with capacity $B$, sequential throughput $S$, and random throughput $R$.
 
 1.  **Capacity:** How much useful storage is available?
-    *   Ideal: $N 	imes B$.
+    *   Ideal: $N \times B$.
     *   Real: Less, due to redundancy overhead.
 2.  **Reliability:** How many disk failures can the system tolerate?
     *   Typically 0 (no protection) to 1 or 2 failures.

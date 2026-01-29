@@ -1,9 +1,15 @@
 ---
-type: atomic
-source: OSTEP Ch. 37
-tags: [optimization, io, persistence]
-related: [[Disk Access Time Depends on Seek Rotation and Transfer]], [[Device Drivers Abstract Hardware Details from the OS]]
-prerequisites: [[Disk Access Time Depends on Seek Rotation and Transfer]]
+type: mechanism
+source: "OSTEP Ch. 37: Hard Disk Drives"
+tags:
+  - optimization
+  - io
+  - persistence
+related:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
+  - "[[Device Drivers Abstract Hardware Details from the OS]]"
+prerequisites:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
 ---
 
 > [!SUMMARY]

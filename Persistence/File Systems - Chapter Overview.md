@@ -1,9 +1,17 @@
 ---
 type: overview
-source: OSTEP Ch. 39
-tags: [file-system, api, persistence, chapter-overview]
-related: [[Persistence MOC]], [[IO and Storage - Chapter Overview]]
-prerequisites: [[IO and Storage - Chapter Overview]]
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - persistence
+  - chapter-overview
+related:
+  - "[[Persistence MOC]]"
+  - "[[IO and Storage - Chapter Overview]]"
+  - "[[The Address Space Abstracts Physical Memory for Each Process]]"
+prerequisites:
+  - "[[IO and Storage - Chapter Overview]]"
 ---
 
 > [!SUMMARY]

@@ -1,12 +1,15 @@
 ---
-type: atomic
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, journaling]
+type: mechanism
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - journaling
 related:
-  - [[Journaling Provides Crash Consistency via Write-Ahead Logging]]
-  - [[Journal Checkpointing Reclaims Log Space After Successful Writes]]
+  - "[[Journaling Provides Crash Consistency via Write-Ahead Logging]]"
+  - "[[Journal Checkpointing Reclaims Log Space After Successful Writes]]"
 prerequisites:
-  - [[Journaling Provides Crash Consistency via Write-Ahead Logging]]
+  - "[[Journaling Provides Crash Consistency via Write-Ahead Logging]]"
 ---
 
 > [!SUMMARY]

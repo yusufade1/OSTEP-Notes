@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 39
-tags: [file-system, api, metadata, persistence]
-related: [[Directories Map Names to Inode Numbers]], [[Files are Named Sequences of Bytes]]
-prerequisites: [[Files are Named Sequences of Bytes]]
+type: concept
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - metadata
+  - persistence
+related:
+  - "[[Directories Map Names to Inode Numbers]]"
+  - "[[Files are Named Sequences of Bytes]]"
+prerequisites:
+  - "[[Files are Named Sequences of Bytes]]"
 ---
 
 > [!SUMMARY]
@@ -26,10 +33,8 @@ Applications use `stat()` to inspect this metadata.
 ```c
 struct stat sb;
 stat("foo.txt", &sb);
-printf("Size: %ld
-", sb.st_size);
-printf("Inode: %ld
-", sb.st_ino);
+printf("Size: %ld\n", sb.st_size);
+printf("Inode: %ld\n", sb.st_ino);
 ```
 
 ### Note on Filenames

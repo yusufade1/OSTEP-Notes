@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 41
-tags: [file-system, implementation, locality, ffs, persistence]
-related: [[FFS Cylinder Groups Improve Locality]], [[FFS Allocation Policies Optimize Seek Times]]
-prerequisites: [[FFS Allocation Policies Optimize Seek Times]]
+type: mechanism
+source: "OSTEP Ch. 41: Locality and The Fast File System"
+tags:
+  - file-system
+  - implementation
+  - locality
+  - ffs
+  - persistence
+related:
+  - "[[FFS Cylinder Groups Improve Locality]]"
+  - "[[FFS Allocation Policies Optimize Seek Times]]"
+prerequisites:
+  - "[[FFS Allocation Policies Optimize Seek Times]]"
 ---
 
 > [!SUMMARY]

@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 39
-tags: [file-system, api, persistence]
-related: [[read() and write() Access Data sequentially]], [[Files are Named Sequences of Bytes]], [[Device Interface Exposes Registers for Status Command and Data]]
-prerequisites: [[Files are Named Sequences of Bytes]]
+type: concept
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - persistence
+related:
+  - "[[read() and write() Access Data sequentially]]"
+  - "[[Files are Named Sequences of Bytes]]"
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
+prerequisites:
+  - "[[Files are Named Sequences of Bytes]]"
 ---
 
 > [!SUMMARY]

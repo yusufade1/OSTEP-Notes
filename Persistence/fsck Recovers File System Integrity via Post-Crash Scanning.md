@@ -1,12 +1,15 @@
 ---
-type: atomic
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, recovery]
+type: mechanism
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - recovery
 related:
-  - [[The Crash Consistency Problem Arises from Partial Disk Updates]]
-  - [[Journaling Provides Crash Consistency via Write-Ahead Logging]]
+  - "[[The Crash Consistency Problem Arises from Partial Disk Updates]]"
+  - "[[Journaling Provides Crash Consistency via Write-Ahead Logging]]"
 prerequisites:
-  - [[The Crash Consistency Problem Arises from Partial Disk Updates]]
+  - "[[The Crash Consistency Problem Arises from Partial Disk Updates]]"
 ---
 
 > [!SUMMARY]

@@ -1,13 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 36
-tags: [persistence, io, interface, registers]
-related: 
-  - [[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]
-  - [[Polling and Interrupts Trade CPU Cycles for Responsiveness]]
-  - [[Direct Execution Runs Programs Directly on the CPU]]
+type: mechanism
+source: "OSTEP Ch. 36: I/O Devices"
+tags:
+  - persistence
+  - io
+  - interface
+  - registers
+related:
+  - "[[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]"
+  - "[[Polling and Interrupts Trade CPU Cycles for Responsiveness]]"
+  - "[[Direct Execution Runs Programs Directly on the CPU]]"
 prerequisites:
-  - [[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]
+  - "[[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]"
 ---
 
 > [!SUMMARY]

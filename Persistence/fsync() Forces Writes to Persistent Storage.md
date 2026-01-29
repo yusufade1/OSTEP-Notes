@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 39
-tags: [file-system, api, reliability, persistence]
-related: [[read() and write() Access Data sequentially]], [[Crash Consistency and Journaling]]
-prerequisites: [[read() and write() Access Data sequentially]]
+type: concept
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - reliability
+  - persistence
+related:
+  - "[[read() and write() Access Data sequentially]]"
+  - "[[Crash Consistency - Chapter Overview]]"
+prerequisites:
+  - "[[read() and write() Access Data sequentially]]"
 ---
 
 > [!SUMMARY]

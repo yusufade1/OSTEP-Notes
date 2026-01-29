@@ -1,12 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 36
-tags: [persistence, io, architecture, hardware]
-related: 
-  - [[Device Interface Exposes Registers for Status Command and Data]]
-  - [[Direct Execution Runs Programs Directly on the CPU]]
+type: mechanism
+source: "OSTEP Ch. 36: I/O Devices"
+tags:
+  - persistence
+  - io
+  - architecture
+  - hardware
+related:
+  - "[[Device Interface Exposes Registers for Status Command and Data]]"
+  - "[[Direct Execution Runs Programs Directly on the CPU]]"
 prerequisites:
-  - [[System Calls Transfer Control via Trap and Return-from-Trap]]
+  - "[[System Calls Transfer Control via Trap and Return-from-Trap]]"
 ---
 
 > [!SUMMARY]

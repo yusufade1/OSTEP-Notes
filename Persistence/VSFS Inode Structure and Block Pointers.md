@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 40
-tags: [file-system, implementation, inode, persistence]
-related: [[VSFS Disk Layout - Superblock Bitmaps and Regions]], [[File Metadata describes File Attributes]]
-prerequisites: [[VSFS Disk Layout - Superblock Bitmaps and Regions]]
+type: mechanism
+source: "OSTEP Ch. 40: File System Implementation"
+tags:
+  - file-system
+  - implementation
+  - inode
+  - persistence
+related:
+  - "[[VSFS Disk Layout - Superblock Bitmaps and Regions]]"
+  - "[[File Metadata describes File Attributes]]"
+prerequisites:
+  - "[[VSFS Disk Layout - Superblock Bitmaps and Regions]]"
 ---
 
 > [!SUMMARY]
@@ -21,10 +28,10 @@ The inode stores everything *except* the filename and the data content:
 ### Block Pointers (The Index)
 The critical job of the inode is to map logical file offsets to physical disk blocks. VSFS uses an imbalanced tree structure:
 1.  **Direct Pointers:** The first 12 pointers in the inode point directly to data blocks.
-    *   *Capacity:* $12 	imes 4	ext{ KB} = 48	ext{ KB}$.
+    *   *Capacity:* $12 \times 4\text{ KB} = 48\text{ KB}$.
     *   *Speed:* Accessing small files requires only fetching the inode.
 2.  **Indirect Pointer:** The 13th pointer points to a **data block** that contains *more* pointers (e.g., 1024 pointers in a 4 KB block).
-    *   *Capacity:* $1024 	imes 4	ext{ KB} = 4	ext{ MB}$.
+    *   *Capacity:* $1024 \times 4\text{ KB} = 4\text{ MB}$.
     *   *Speed:* Requires two disk reads (inode + pointer block) to find data.
 3.  **Double Indirect Pointer:** Points to a block of indirect pointers (supporting GB-sized files).
 

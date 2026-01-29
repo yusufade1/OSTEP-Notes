@@ -1,12 +1,15 @@
 ---
-type: atomic
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, journaling]
+type: mechanism
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - journaling
 related:
-  - [[Journaling Provides Crash Consistency via Write-Ahead Logging]]
-  - [[Journal Structure Organizes Transactions with Transaction Blocks]]
+  - "[[Journaling Provides Crash Consistency via Write-Ahead Logging]]"
+  - "[[Journal Structure Organizes Transactions with Transaction Blocks]]"
 prerequisites:
-  - [[Journaling Provides Crash Consistency via Write-Ahead Logging]]
+  - "[[Journaling Provides Crash Consistency via Write-Ahead Logging]]"
 ---
 
 > [!SUMMARY]

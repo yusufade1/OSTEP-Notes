@@ -1,9 +1,15 @@
 ---
-type: atomic
-source: OSTEP Ch. 39
-tags: [file-system, api, persistence]
-related: [[The open() System Call Creates and Accesses Files]], [[lseek() Repositions the File Offset]]
-prerequisites: [[The open() System Call Creates and Accesses Files]]
+type: concept
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - persistence
+related:
+  - "[[The open() System Call Creates and Accesses Files]]"
+  - "[[lseek() Repositions the File Offset]]"
+prerequisites:
+  - "[[The open() System Call Creates and Accesses Files]]"
 ---
 
 > [!SUMMARY]

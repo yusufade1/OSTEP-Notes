@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 39
-tags: [file-system, api, abstraction, persistence]
-related: [[Directories Map Names to Inode Numbers]], [[File Metadata describes File Attributes]], [[The open() System Call Creates and Accesses Files]]
-prerequisites: [[File Systems - Chapter Overview]]
+type: concept
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - abstraction
+  - persistence
+related:
+  - "[[Directories Map Names to Inode Numbers]]"
+  - "[[File Metadata describes File Attributes]]"
+  - "[[The open() System Call Creates and Accesses Files]]"
+prerequisites:
+  - "[[File Systems - Chapter Overview]]"
 ---
 
 > [!SUMMARY]

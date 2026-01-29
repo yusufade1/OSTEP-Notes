@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 39
-tags: [file-system, api, metadata, persistence]
-related: [[Directories Map Names to Inode Numbers]], [[File Metadata describes File Attributes]]
-prerequisites: [[Directories Map Names to Inode Numbers]]
+type: concept
+source: "OSTEP Ch. 39: Interlude: Files and Directories"
+tags:
+  - file-system
+  - api
+  - metadata
+  - persistence
+related:
+  - "[[Directories Map Names to Inode Numbers]]"
+  - "[[File Metadata describes File Attributes]]"
+prerequisites:
+  - "[[Directories Map Names to Inode Numbers]]"
 ---
 
 > [!SUMMARY]

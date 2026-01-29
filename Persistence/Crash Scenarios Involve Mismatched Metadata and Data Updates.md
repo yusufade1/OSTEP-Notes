@@ -1,12 +1,15 @@
 ---
-type: atomic
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, persistence]
+type: mechanism
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - persistence
 related:
-  - [[The Crash Consistency Problem Arises from Partial Disk Updates]]
-  - [[VSFS File Write Path Involves Allocation and Metadata Updates]]
+  - "[[The Crash Consistency Problem Arises from Partial Disk Updates]]"
+  - "[[VSFS File Write Path Involves Allocation and Metadata Updates]]"
 prerequisites:
-  - [[The Crash Consistency Problem Arises from Partial Disk Updates]]
+  - "[[The Crash Consistency Problem Arises from Partial Disk Updates]]"
 ---
 
 > [!SUMMARY]

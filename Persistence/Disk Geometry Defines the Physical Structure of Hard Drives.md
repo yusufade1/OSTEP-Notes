@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 37
-tags: [hard-disk, geometry, hardware, persistence]
-related: [[Disk Access Time Depends on Seek Rotation and Transfer]], [[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]
-prerequisites: [[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]
+type: mechanism
+source: "OSTEP Ch. 37: Hard Disk Drives"
+tags:
+  - hard-disk
+  - geometry
+  - hardware
+  - persistence
+related:
+  - "[[Disk Access Time Depends on Seek Rotation and Transfer]]"
+  - "[[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]"
+prerequisites:
+  - "[[IO Architecture Connects CPU Memory and Devices via Bus Hierarchy]]"
 ---
 
 > [!SUMMARY]

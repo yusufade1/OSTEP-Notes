@@ -1,14 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 42
-tags: [file-system, crash-consistency, journaling]
+type: mechanism
+source: "OSTEP Ch. 42: Crash Consistency: FSCK and Journaling"
+tags:
+  - file-system
+  - crash-consistency
+  - journaling
 related:
-  - [[Journal Structure Organizes Transactions with Transaction Blocks]]
-  - [[Journal Checkpointing Reclaims Log Space After Successful Writes]]
-  - [[fsck Recovers File System Integrity via Post-Crash Scanning]]
-  - [[Log-Structured File Systems - Chapter Overview]]
+  - "[[Journal Structure Organizes Transactions with Transaction Blocks]]"
+  - "[[Journal Checkpointing Reclaims Log Space After Successful Writes]]"
+  - "[[fsck Recovers File System Integrity via Post-Crash Scanning]]"
+  - "[[Log-Structured File Systems - Chapter Overview]]"
 prerequisites:
-  - [[The Crash Consistency Problem Arises from Partial Disk Updates]]
+  - "[[The Crash Consistency Problem Arises from Partial Disk Updates]]"
 ---
 
 > [!SUMMARY]
