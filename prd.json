@@ -1,6 +1,6 @@
 {
   "project": "OSTEP-PKM",
-  "branchName": "vert-cont"
+  "branchName": "vert-cont",
   "description": "Convert all ~50 OSTEP chapters into atomic Obsidian PKM notes organized into Virtualization, Concurrency, and Persistence folders with wikilinks, prerequisites, and quality gates.",
   "userStories": [
     {
@@ -474,7 +474,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 31,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -489,7 +489,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 32,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -504,7 +504,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 33,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -519,7 +519,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 34,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -534,7 +534,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 35,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -549,7 +549,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 36,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -564,7 +564,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 37,
-      "passes": false,
+      "passes": true,
       "notes": ""
     },
     {
@@ -582,7 +582,7 @@
         "YAML frontmatter is valid and parseable"
       ],
       "priority": 38,
-      "passes": false,
+      "passes": true,
       "notes": ""
     }
   ]
