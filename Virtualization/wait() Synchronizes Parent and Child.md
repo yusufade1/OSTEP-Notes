@@ -14,7 +14,6 @@ prerequisites:
   - "[[fork() Creates a Child by Copying Parent]]"
   - "[[Process States - Ready Running and Blocked]]"
 ---
-
 # wait() Synchronizes Parent and Child
 
 > [!SUMMARY]

@@ -13,10 +13,9 @@ related:
 prerequisites:
   - "[[fork() Creates a Child by Copying Parent]]"
 ---
-
 # exec() Replaces the Process Image
 
-> [!SUMMARY]
+> [!SUMMARY]-
 > The `exec()` family of system calls transforms the current process into an entirely different program. It loads a new executable into the calling process's address space—replacing its code, data, stack, and heap—then starts executing at the new program's entry point. The PID remains the same, open files are preserved (unless marked close-on-exec), but everything else is replaced. A successful `exec()` never returns.
 
 ## The Mechanism
@@ -57,7 +56,7 @@ Common variants:
 - **`execlp(file, arg0, arg1, ..., NULL)`** — searches PATH, passes arguments as list
 - **`execve(path, argv, envp)`** — the underlying system call; also sets environment
 
-The naming convention: `v` = vector (array), `l` = list, `p` = search PATH, `e` = environment.
+> The naming convention: `v` = vector (array), `l` = list, `p` = search PATH, `e` = environment.
 
 ## Never Returns on Success
 

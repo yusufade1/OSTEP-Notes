@@ -16,7 +16,6 @@ prerequisites:
   - "[[exec() Replaces the Process Image]]"
   - "[[wait() Synchronizes Parent and Child]]"
 ---
-
 # Process API Design Philosophy
 
 > [!SUMMARY]
