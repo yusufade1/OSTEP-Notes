@@ -1,14 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 29
-tags: [concurrency, data-structures, hashing]
+type: mechanism
+source: "OSTEP Ch. 29: Locked Data Structures"
+tags:
+  - concurrency
+  - data-structures
+  - hashing
 related:
-  - [[Concurrent Linked Lists Enable Parallel Access]]
-  - [[Concurrent Counters Scale with Approximate Counting]]
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
+  - "[[Concurrent Linked Lists Enable Parallel Access]]"
+  - "[[Concurrent Counters Scale with Approximate Counting]]"
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
 prerequisites:
-  - [[Concurrent Linked Lists Enable Parallel Access]]
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
+  - "[[Concurrent Linked Lists Enable Parallel Access]]"
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
 ---
 
 > [!SUMMARY]

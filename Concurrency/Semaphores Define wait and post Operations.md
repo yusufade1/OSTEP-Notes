@@ -1,9 +1,17 @@
 ---
-type: atomic
+type: mechanism
 source: OSTEP Ch. 25
-tags: [concurrency, synchronization, semaphores, api]
-related: [[Binary Semaphores Act as Mutual Exclusion Locks]], [[Semaphores Can Order Threads Like Condition Variables]], [[Critical Sections Require Mutual Exclusion]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]]
+tags:
+  - concurrency
+  - synchronization
+  - semaphores
+  - api
+related:
+  - "[[Binary Semaphores Act as Mutual Exclusion Locks]]"
+  - "[[Semaphores Can Order Threads Like Condition Variables]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 > [!SUMMARY]

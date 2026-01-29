@@ -1,7 +1,10 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, bugs, deadlock]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - bugs
+  - deadlock
 related:
   - "[[The Dining Philosophers Problem Illustrates Deadlock]]"
   - "[[Lock Design Goals - Mutual Exclusion Fairness and Performance]]"

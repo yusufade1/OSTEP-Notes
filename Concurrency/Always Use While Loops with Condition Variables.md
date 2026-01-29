@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 30
-tags: [concurrency, synchronization, condition-variables]
-related: [[Condition Variables Allow Threads to Sleep and Wake]], [[Producer-Consumer Problem Solved with Condition Variables]], [[Race Conditions lead to Non-Deterministic Behavior]]
-prerequisites: [[Condition Variables Allow Threads to Sleep and Wake]]
+type: mechanism
+source: "OSTEP Ch. 30: Condition Variables"
+tags:
+  - concurrency
+  - synchronization
+  - condition-variables
+related:
+  - "[[Condition Variables Allow Threads to Sleep and Wake]]"
+  - "[[Producer-Consumer Problem Solved with Condition Variables]]"
+  - "[[Race Conditions lead to Non-Deterministic Behavior]]"
+prerequisites:
+  - "[[Condition Variables Allow Threads to Sleep and Wake]]"
 ---
 
 > [!SUMMARY]

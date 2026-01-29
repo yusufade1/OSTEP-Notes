@@ -1,7 +1,11 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, bugs, deadlock, algorithm]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - bugs
+  - deadlock
+  - algorithm
 related:
   - "[[Deadlock Prevention Breaks One of the Four Necessary Conditions]]"
   - "[[Deadlock Occurs When Threads Wait on Each Other Circularly]]"

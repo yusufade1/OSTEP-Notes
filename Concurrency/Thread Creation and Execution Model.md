@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, threads, execution]
-related: [[Threads - Chapter Overview]], [[Thread vs Process - Shared Address Space]], [[Context Switch Saves and Restores Process State]]
-prerequisites: [[Thread vs Process - Shared Address Space]]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - threads
+  - execution
+related:
+  - "[[Threads - Chapter Overview]]"
+  - "[[Thread vs Process - Shared Address Space]]"
+  - "[[Context Switch Saves and Restores Process State]]"
+prerequisites:
+  - "[[Thread vs Process - Shared Address Space]]"
 ---
 
 # Thread Creation and Execution Model

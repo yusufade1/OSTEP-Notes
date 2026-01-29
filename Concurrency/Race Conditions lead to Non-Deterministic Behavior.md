@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, race-condition, bug, non-determinism]
-related: [[Threads - Chapter Overview]], [[Critical Sections Require Mutual Exclusion]], [[Concurrency Bugs - Common Pitfalls]]
-prerequisites: [[Thread Creation and Execution Model]]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - race-condition
+  - bug
+  - non-determinism
+related:
+  - "[[Threads - Chapter Overview]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
+  - "[[Concurrency Bugs - Chapter Overview]]"
+prerequisites:
+  - "[[Thread Creation and Execution Model]]"
 ---
 
 # Race Conditions lead to Non-Deterministic Behavior

@@ -1,9 +1,18 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, threads, processes, abstraction]
-related: [[Threads - Chapter Overview]], [[A Process is a Running Program]], [[The Address Space Abstracts Physical Memory for Each Process]]
-prerequisites: [[A Process is a Running Program]], [[The Address Space Abstracts Physical Memory for Each Process]]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - threads
+  - processes
+  - abstraction
+related:
+  - "[[Threads - Chapter Overview]]"
+  - "[[A Process is a Running Program]]"
+  - "[[The Address Space Abstracts Physical Memory for Each Process]]"
+prerequisites:
+  - "[[A Process is a Running Program]]"
+  - "[[The Address Space Abstracts Physical Memory for Each Process]]"
 ---
 
 # Thread vs Process - Shared Address Space

@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 28
-tags: [concurrency, locks, fairness, ticket-lock]
-related: [[Lock Design Goals - Mutual Exclusion Fairness and Performance]], [[Test-and-Set Instruction Enables Atomic Locking]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]]
+type: mechanism
+source: "OSTEP Ch. 28: Locks"
+tags:
+  - concurrency
+  - locks
+  - fairness
+  - ticket-lock
+related:
+  - "[[Lock Design Goals - Mutual Exclusion Fairness and Performance]]"
+  - "[[Test-and-Set Instruction Enables Atomic Locking]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 > [!SUMMARY]

@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 28
-tags: [concurrency, locks, scheduling, context-switch]
-related: [[Spin Locks rely on Busy Waiting]], [[Queue-Based Locks Put Waiting Threads to Sleep]]
-prerequisites: [[Spin Locks rely on Busy Waiting]]
+type: mechanism
+source: "OSTEP Ch. 28: Locks"
+tags:
+  - concurrency
+  - locks
+  - scheduling
+  - context-switch
+related:
+  - "[[Spin Locks rely on Busy Waiting]]"
+  - "[[Queue-Based Locks Put Waiting Threads to Sleep]]"
+prerequisites:
+  - "[[Spin Locks rely on Busy Waiting]]"
 ---
 
 > [!SUMMARY]

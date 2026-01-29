@@ -1,9 +1,18 @@
 ---
-type: atomic
+type: mechanism
 source: OSTEP Ch. 25
-tags: [concurrency, synchronization, semaphores, implementation]
-related: [[Semaphores Define wait and post Operations]], [[Condition Variables Allow Threads to Sleep and Wake]], [[Lock Design Goals - Mutual Exclusion Fairness and Performance]]
-prerequisites: [[Semaphores Define wait and post Operations]], [[Condition Variables Allow Threads to Sleep and Wake]]
+tags:
+  - concurrency
+  - synchronization
+  - semaphores
+  - implementation
+related:
+  - "[[Semaphores Define wait and post Operations]]"
+  - "[[Condition Variables Allow Threads to Sleep and Wake]]"
+  - "[[Lock Design Goals - Mutual Exclusion Fairness and Performance]]"
+prerequisites:
+  - "[[Semaphores Define wait and post Operations]]"
+  - "[[Condition Variables Allow Threads to Sleep and Wake]]"
 ---
 
 > [!SUMMARY]

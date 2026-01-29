@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 28
-tags: [concurrency, locks, hardware, atomic-instruction]
-related: [[Spin Locks rely on Busy Waiting]], [[Compare-and-Swap Provides Powerful Atomic Update]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]]
+type: mechanism
+source: "OSTEP Ch. 28: Locks"
+tags:
+  - concurrency
+  - locks
+  - hardware
+  - atomic-instruction
+related:
+  - "[[Spin Locks rely on Busy Waiting]]"
+  - "[[Compare-and-Swap Provides Powerful Atomic Update]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 > [!SUMMARY]

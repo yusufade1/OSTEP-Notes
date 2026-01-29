@@ -1,9 +1,17 @@
 ---
-type: atomic
+type: mechanism
 source: OSTEP Ch. 25
-tags: [concurrency, synchronization, semaphores, locks]
-related: [[Semaphores Define wait and post Operations]], [[pthread_mutex_lock() and unlock() Protect Critical Sections]], [[Critical Sections Require Mutual Exclusion]]
-prerequisites: [[Semaphores Define wait and post Operations]]
+tags:
+  - concurrency
+  - synchronization
+  - semaphores
+  - locks
+related:
+  - "[[Semaphores Define wait and post Operations]]"
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
+prerequisites:
+  - "[[Semaphores Define wait and post Operations]]"
 ---
 
 > [!SUMMARY]

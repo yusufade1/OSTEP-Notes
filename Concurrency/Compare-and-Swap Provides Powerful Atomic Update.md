@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 28
-tags: [concurrency, locks, hardware, atomic-instruction]
-related: [[Test-and-Set Instruction Enables Atomic Locking]], [[Ticket Locks Ensure Fairness with Fetch-and-Add]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]]
+type: mechanism
+source: "OSTEP Ch. 28: Locks"
+tags:
+  - concurrency
+  - locks
+  - hardware
+  - atomic-instruction
+related:
+  - "[[Test-and-Set Instruction Enables Atomic Locking]]"
+  - "[[Ticket Locks Ensure Fairness with Fetch-and-Add]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 > [!SUMMARY]

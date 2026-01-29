@@ -1,7 +1,10 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, bugs, locks]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - bugs
+  - locks
 related:
   - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
   - "[[Critical Sections Require Mutual Exclusion]]"

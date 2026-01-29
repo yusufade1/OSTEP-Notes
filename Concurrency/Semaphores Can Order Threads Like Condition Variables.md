@@ -1,9 +1,17 @@
 ---
-type: atomic
+type: mechanism
 source: OSTEP Ch. 25
-tags: [concurrency, synchronization, semaphores, ordering]
-related: [[Semaphores Define wait and post Operations]], [[Condition Variables Allow Threads to Sleep and Wake]], [[pthread_join() Waits for Thread Completion]]
-prerequisites: [[Semaphores Define wait and post Operations]]
+tags:
+  - concurrency
+  - synchronization
+  - semaphores
+  - ordering
+related:
+  - "[[Semaphores Define wait and post Operations]]"
+  - "[[Condition Variables Allow Threads to Sleep and Wake]]"
+  - "[[pthread_join() Waits for Thread Completion]]"
+prerequisites:
+  - "[[Semaphores Define wait and post Operations]]"
 ---
 
 > [!SUMMARY]
@@ -24,21 +32,18 @@ Suppose a parent thread wants to wait for a child thread to finish execution:
 
 ```c
 void *child(void *arg) {
-    printf("child
-");
+    printf("child\n");
     sem_post(&s); // Signal completion
     return NULL;
 }
 
 int main(int argc, char *argv[]) {
     sem_init(&s, 0, 0);
-    printf("parent: begin
-");
+    printf("parent: begin\n");
     pthread_t c;
     pthread_create(&c, NULL, child, NULL);
     sem_wait(&s); // Wait for child
-    printf("parent: end
-");
+    printf("parent: end\n");
     return 0;
 }
 ```

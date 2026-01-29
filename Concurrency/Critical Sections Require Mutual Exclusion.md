@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, critical-section, atomicity, mutual-exclusion]
-related: [[Threads - Chapter Overview]], [[Race Conditions lead to Non-Deterministic Behavior]], [[Lock Implementations - Chapter Overview]]
-prerequisites: [[Race Conditions lead to Non-Deterministic Behavior]]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - critical-section
+  - atomicity
+  - mutual-exclusion
+related:
+  - "[[Threads - Chapter Overview]]"
+  - "[[Race Conditions lead to Non-Deterministic Behavior]]"
+  - "[[Locks - Chapter Overview]]"
+prerequisites:
+  - "[[Race Conditions lead to Non-Deterministic Behavior]]"
 ---
 
 # Critical Sections Require Mutual Exclusion

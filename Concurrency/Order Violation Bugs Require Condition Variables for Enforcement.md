@@ -1,7 +1,10 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, bugs, condition-variables]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - bugs
+  - condition-variables
 related:
   - "[[Condition Variables Allow Threads to Sleep and Wake]]"
   - "[[Always Use While Loops with Condition Variables]]"

@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, io, async]
-related: [[Blocking Calls Freeze Event-Based Systems], [The select() and poll() API Monitors File Descriptors], [Event-Based Concurrency Relies on an Event Loop]]
-prerequisites: [[Blocking Calls Freeze Event-Based Systems], [System Calls Transfer Control via Trap and Return-from-Trap]]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - io
+  - async
+related:
+  - "[[Blocking Calls Freeze Event-Based Systems]]"
+  - "[[The select() and poll() API Monitors File Descriptors]]"
+  - "[[Event-Based Concurrency Relies on an Event Loop]]"
+prerequisites:
+  - "[[Blocking Calls Freeze Event-Based Systems]]"
+  - "[[System Calls Transfer Control via Trap and Return-from-Trap]]"
 ---
 
 > [!SUMMARY]

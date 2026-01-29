@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 30
-tags: [concurrency, synchronization, condition-variables]
-related: [[Critical Sections Require Mutual Exclusion]], [[pthread_cond_wait() and signal() Coordinate Threads]], [[Always Use While Loops with Condition Variables]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]], [[Lock Design Goals - Mutual Exclusion Fairness and Performance]]
+type: mechanism
+source: "OSTEP Ch. 30: Condition Variables"
+tags:
+  - concurrency
+  - synchronization
+  - condition-variables
+related:
+  - "[[Critical Sections Require Mutual Exclusion]]"
+  - "[[pthread_cond_wait() and signal() Coordinate Threads]]"
+  - "[[Always Use While Loops with Condition Variables]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
+  - "[[Lock Design Goals - Mutual Exclusion Fairness and Performance]]"
 ---
 
 > [!SUMMARY]

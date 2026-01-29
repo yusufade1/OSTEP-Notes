@@ -1,9 +1,18 @@
 ---
-type: atomic
+type: mechanism
 source: OSTEP Ch. 25
-tags: [concurrency, synchronization, semaphores, locks, patterns]
-related: [[Binary Semaphores Act as Mutual Exclusion Locks]], [[Critical Sections Require Mutual Exclusion]], [[Semaphores Define wait and post Operations]]
-prerequisites: [[Binary Semaphores Act as Mutual Exclusion Locks]]
+tags:
+  - concurrency
+  - synchronization
+  - semaphores
+  - locks
+  - patterns
+related:
+  - "[[Binary Semaphores Act as Mutual Exclusion Locks]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
+  - "[[Semaphores Define wait and post Operations]]"
+prerequisites:
+  - "[[Binary Semaphores Act as Mutual Exclusion Locks]]"
 ---
 
 > [!SUMMARY]

@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 26
-tags: [concurrency, threads, performance, parallelism]
-related: [[Threads - Chapter Overview]], [[Thread vs Process - Shared Address Space]], [[Multi-CPU Scheduling Faces Cache Affinity and Synchronization Challenges]]
-prerequisites: [[Thread vs Process - Shared Address Space]]
+type: concept
+source: "OSTEP Ch. 26: Concurrency: An Introduction"
+tags:
+  - concurrency
+  - threads
+  - performance
+  - parallelism
+related:
+  - "[[Threads - Chapter Overview]]"
+  - "[[Thread vs Process - Shared Address Space]]"
+  - "[[Multi-CPU Scheduling Faces Cache Affinity and Synchronization Challenges]]"
+prerequisites:
+  - "[[Thread vs Process - Shared Address Space]]"
 ---
 
 # Why Use Threads - Parallelism and Responsiveness

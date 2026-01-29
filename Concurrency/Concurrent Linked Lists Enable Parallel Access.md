@@ -1,13 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 29
-tags: [concurrency, data-structures, synchronization]
+type: mechanism
+source: "OSTEP Ch. 29: Locked Data Structures"
+tags:
+  - concurrency
+  - data-structures
+  - synchronization
 related:
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
-  - [[Critical Sections Require Mutual Exclusion]]
-  - [[Race Conditions lead to Non-Deterministic Behavior]]
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
+  - "[[Race Conditions lead to Non-Deterministic Behavior]]"
 prerequisites:
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
 ---
 
 > [!SUMMARY]

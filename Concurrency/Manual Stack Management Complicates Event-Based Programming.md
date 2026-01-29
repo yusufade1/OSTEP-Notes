@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, events, coding-style]
-related: [[Event-Based Concurrency Relies on an Event Loop], [Blocking Calls Freeze Event-Based Systems], [Thread Creation and Execution Model]]
-prerequisites: [[Event-Based Concurrency Relies on an Event Loop], [Stack and Heap Occupy Opposite Ends of the Address Space]]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - events
+  - coding-style
+related:
+  - "[[Event-Based Concurrency Relies on an Event Loop]]"
+  - "[[Blocking Calls Freeze Event-Based Systems]]"
+  - "[[Thread Creation and Execution Model]]"
+prerequisites:
+  - "[[Event-Based Concurrency Relies on an Event Loop]]"
+  - "[[Stack and Heap Occupy Opposite Ends of the Address Space]]"
 ---
 
 > [!SUMMARY]

@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 28
-tags: [concurrency, locks, performance, fairness]
-related: [[Locks - Chapter Overview]], [[Critical Sections Require Mutual Exclusion]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]]
+type: mechanism
+source: "OSTEP Ch. 28: Locks"
+tags:
+  - concurrency
+  - locks
+  - performance
+  - fairness
+related:
+  - "[[Locks - Chapter Overview]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 > [!SUMMARY]

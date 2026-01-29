@@ -1,12 +1,21 @@
 ---
 type: overview
-tags: [concurrency, threads, overview]
-related: [[Concurrency MOC]]
+tags:
+  - concurrency
+  - threads
+  - overview
+related:
+  - "[[Concurrency MOC]]"
+  - "[[Processes - Chapter Overview]]"
+prerequisites: []
+source: "OSTEP Book"
 ---
 
 # Threads - Chapter Overview
 
-This chapter introduces the concept of **threads**, a fundamental abstraction for concurrency. Unlike processes, which are isolated execution units, threads share the same address space, enabling them to access the same data. This shared-memory model provides powerful capabilities for parallelism and responsiveness but introduces new challenges such as race conditions and the need for synchronization.
+> [!SUMMARY]
+> This chapter introduces the concept of **threads**, a fundamental abstraction for concurrency. Unlike processes, which are isolated execution units, threads share the same address space, enabling them to access the same data. This shared-memory model provides powerful capabilities for parallelism and responsiveness but introduces new challenges such as race conditions and the need for synchronization.
+
 
 ## Key Concepts
 

@@ -1,9 +1,17 @@
 ---
-type: atomic
+type: mechanism
 source: OSTEP Ch. 25
-tags: [concurrency, synchronization, semaphores, deadlock, patterns]
-related: [[Semaphores Define wait and post Operations]], [[Binary Semaphores Act as Mutual Exclusion Locks]]
-prerequisites: [[Semaphores Define wait and post Operations]]
+tags:
+  - concurrency
+  - synchronization
+  - semaphores
+  - deadlock
+  - patterns
+related:
+  - "[[Semaphores Define wait and post Operations]]"
+  - "[[Binary Semaphores Act as Mutual Exclusion Locks]]"
+prerequisites:
+  - "[[Semaphores Define wait and post Operations]]"
 ---
 
 > [!SUMMARY]

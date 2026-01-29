@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, events, architecture]
-related: [[Thread vs Process - Shared Address Space], [Why Use Threads - Parallelism and Responsiveness], [The select() and poll() API Monitors File Descriptors]]
-prerequisites: [[Thread vs Process - Shared Address Space], [System Calls Transfer Control via Trap and Return-from-Trap]]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - events
+  - architecture
+related:
+  - "[[Thread vs Process - Shared Address Space]]"
+  - "[[Why Use Threads - Parallelism and Responsiveness]]"
+  - "[[The select() and poll() API Monitors File Descriptors]]"
+prerequisites:
+  - "[[Thread vs Process - Shared Address Space]]"
+  - "[[System Calls Transfer Control via Trap and Return-from-Trap]]"
 ---
 
 > [!SUMMARY]

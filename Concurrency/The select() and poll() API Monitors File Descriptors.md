@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, events, api, unix]
-related: [[Event-Based Concurrency Relies on an Event Loop], [Blocking Calls Freeze Event-Based Systems], [System Calls Transfer Control via Trap and Return-from-Trap]]
-prerequisites: [[Event-Based Concurrency Relies on an Event Loop]]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - events
+  - api
+  - unix
+related:
+  - "[[Event-Based Concurrency Relies on an Event Loop]]"
+  - "[[Blocking Calls Freeze Event-Based Systems]]"
+  - "[[System Calls Transfer Control via Trap and Return-from-Trap]]"
+prerequisites:
+  - "[[Event-Based Concurrency Relies on an Event Loop]]"
 ---
 
 > [!SUMMARY]

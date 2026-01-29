@@ -1,13 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, threads, api, pthreads]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - threads
+  - api
+  - pthreads
 related:
-  - [[Thread Creation and Execution Model]]
-  - [[pthread_join() Waits for Thread Completion]]
-  - [[A Process is a Running Program]]
+  - "[[Thread Creation and Execution Model]]"
+  - "[[pthread_join() Waits for Thread Completion]]"
+  - "[[A Process is a Running Program]]"
 prerequisites:
-  - [[Thread Creation and Execution Model]]
+  - "[[Thread Creation and Execution Model]]"
 ---
 
 > [!SUMMARY]
@@ -50,8 +54,7 @@ Here is a simple example of creating a thread that prints a message:
 
 void *mythread(void *arg) {
     int *value = (int *) arg;
-    printf("Thread started with value: %d
-", *value);
+    printf("Thread started with value: %d\n", *value);
     return NULL;
 }
 

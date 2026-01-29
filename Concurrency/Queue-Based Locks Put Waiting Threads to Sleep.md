@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 28
-tags: [concurrency, locks, sleeping, solaris]
-related: [[Yielding Locks Avoid Spinning but Incur Context Switches]], [[Two-Phase Locks Combine Spinning and Sleeping]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]]
+type: mechanism
+source: "OSTEP Ch. 28: Locks"
+tags:
+  - concurrency
+  - locks
+  - sleeping
+  - solaris
+related:
+  - "[[Yielding Locks Avoid Spinning but Incur Context Switches]]"
+  - "[[Two-Phase Locks Combine Spinning and Sleeping]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 > [!SUMMARY]

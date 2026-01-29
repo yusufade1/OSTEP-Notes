@@ -1,9 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, events, performance]
-related: [[Event-Based Concurrency Relies on an Event Loop], [The select() and poll() API Monitors File Descriptors], [Asynchronous I/O Enables Non-Blocking Operations]]
-prerequisites: [[Event-Based Concurrency Relies on an Event Loop]]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - events
+  - performance
+related:
+  - "[[Event-Based Concurrency Relies on an Event Loop]]"
+  - "[[The select() and poll() API Monitors File Descriptors]]"
+  - "[[Asynchronous I-O Enables Non-Blocking Operations]]"
+prerequisites:
+  - "[[Event-Based Concurrency Relies on an Event Loop]]"
 ---
 
 > [!SUMMARY]

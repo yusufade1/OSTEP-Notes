@@ -1,13 +1,16 @@
 ---
-type: atomic
-source: OSTEP Ch. 29
-tags: [concurrency, data-structures, performance]
+type: mechanism
+source: "OSTEP Ch. 29: Locked Data Structures"
+tags:
+  - concurrency
+  - data-structures
+  - performance
 related:
-  - [[Critical Sections Require Mutual Exclusion]]
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
-  - [[Lock Design Goals - Mutual Exclusion Fairness and Performance]]
+  - "[[Critical Sections Require Mutual Exclusion]]"
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
+  - "[[Lock Design Goals - Mutual Exclusion Fairness and Performance]]"
 prerequisites:
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
 ---
 
 > [!SUMMARY]

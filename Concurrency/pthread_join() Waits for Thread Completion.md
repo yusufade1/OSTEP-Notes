@@ -1,13 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, threads, api, pthreads]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - threads
+  - api
+  - pthreads
 related:
-  - [[pthread_create() Starts a New Thread]]
-  - [[Process API Design Philosophy]]
-  - [[Thread Creation and Execution Model]]
+  - "[[pthread_create() Starts a New Thread]]"
+  - "[[Process API Design Philosophy]]"
+  - "[[Thread Creation and Execution Model]]"
 prerequisites:
-  - [[pthread_create() Starts a New Thread]]
+  - "[[pthread_create() Starts a New Thread]]"
 ---
 
 > [!SUMMARY]
@@ -70,8 +74,7 @@ int main() {
     // Wait for thread and get the pointer to its return value
     pthread_join(p, (void **) &rvals);
     
-    printf("returned %d %d
-", rvals->x, rvals->y);
+    printf("returned %d %d\n", rvals->x, rvals->y);
     free(rvals); // Clean up the heap memory allocated by the thread
     return 0;
 }

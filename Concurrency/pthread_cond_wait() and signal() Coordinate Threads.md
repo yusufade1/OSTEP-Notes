@@ -1,13 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, condition-variables, api, pthreads]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - condition-variables
+  - api
+  - pthreads
 related:
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
-  - [[pthread_join() Waits for Thread Completion]]
-  - [[Critical Sections Require Mutual Exclusion]]
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
+  - "[[pthread_join() Waits for Thread Completion]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
 prerequisites:
-  - [[pthread_mutex_lock() and unlock() Protect Critical Sections]]
+  - "[[pthread_mutex_lock() and unlock() Protect Critical Sections]]"
 ---
 
 > [!SUMMARY]
@@ -71,8 +75,7 @@ void thr_exit() {
 }
 
 void *child(void *arg) {
-    printf("child running
-");
+    printf("child running\n");
     thr_exit();
     return NULL;
 }
@@ -89,8 +92,7 @@ int main() {
     pthread_t p;
     pthread_create(&p, NULL, child, NULL);
     thr_join();
-    printf("parent: end
-");
+    printf("parent: end\n");
     return 0;
 }
 ```

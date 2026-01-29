@@ -1,13 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 27
-tags: [concurrency, locks, api, pthreads]
+type: mechanism
+source: "OSTEP Ch. 27: Interlude: Thread API"
+tags:
+  - concurrency
+  - locks
+  - api
+  - pthreads
 related:
-  - [[Critical Sections Require Mutual Exclusion]]
-  - [[Race Conditions lead to Non-Deterministic Behavior]]
-  - [[Thread Creation and Execution Model]]
+  - "[[Critical Sections Require Mutual Exclusion]]"
+  - "[[Race Conditions lead to Non-Deterministic Behavior]]"
+  - "[[Thread Creation and Execution Model]]"
 prerequisites:
-  - [[Critical Sections Require Mutual Exclusion]]
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 > [!SUMMARY]

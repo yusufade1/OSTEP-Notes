@@ -1,14 +1,23 @@
 ---
 type: overview
-source: OSTEP Ch. 28
-tags: [concurrency, locks, synchronization, overview]
-related: [[Concurrency MOC]], [[Critical Sections Require Mutual Exclusion]]
-prerequisites: [[Critical Sections Require Mutual Exclusion]]
+source: "OSTEP Ch. 28: Locks"
+tags:
+  - concurrency
+  - locks
+  - synchronization
+  - overview
+related:
+  - "[[Concurrency MOC]]"
+  - "[[Critical Sections Require Mutual Exclusion]]"
+prerequisites:
+  - "[[Critical Sections Require Mutual Exclusion]]"
 ---
 
 # Locks - Chapter Overview
 
-Locks are the fundamental mechanism for ensuring **mutual exclusion** in concurrent programs. By wrapping a **critical section** with a lock, we ensure that only one thread can execute that code at a time, preserving atomicity and preventing race conditions.
+> [!SUMMARY]
+> Locks are the fundamental mechanism for ensuring **mutual exclusion** in concurrent programs. By wrapping a **critical section** with a lock, we ensure that only one thread can execute that code at a time, preserving atomicity and preventing race conditions.
+
 
 This chapter explores how to build locks from the ground up, starting with hardware primitives and moving to OS-supported implementations.
 

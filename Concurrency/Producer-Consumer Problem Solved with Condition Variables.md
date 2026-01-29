@@ -1,9 +1,17 @@
 ---
-type: atomic
-source: OSTEP Ch. 30
-tags: [concurrency, synchronization, condition-variables, patterns]
-related: [[Condition Variables Allow Threads to Sleep and Wake]], [[Always Use While Loops with Condition Variables]], [[Concurrent Queues Use Two Locks for Head and Tail]]
-prerequisites: [[Always Use While Loops with Condition Variables]]
+type: mechanism
+source: "OSTEP Ch. 30: Condition Variables"
+tags:
+  - concurrency
+  - synchronization
+  - condition-variables
+  - patterns
+related:
+  - "[[Condition Variables Allow Threads to Sleep and Wake]]"
+  - "[[Always Use While Loops with Condition Variables]]"
+  - "[[Concurrent Queues Use Two Locks for Head and Tail]]"
+prerequisites:
+  - "[[Always Use While Loops with Condition Variables]]"
 ---
 
 > [!SUMMARY]
@@ -76,8 +84,7 @@ void *consumer(void *arg) {
         int tmp = get();
         Pthread_cond_signal(&empty);
         Pthread_mutex_unlock(&mutex);
-        printf("%d
-", tmp);
+        printf("%d\n", tmp);
     }
 }
 ```
