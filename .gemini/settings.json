@@ -1,0 +1,32 @@
+{
+    "security": {
+        // Ensure this is false so autoAccept works
+        "disableYoloMode": false,
+        "blockGitExtensions": false
+    },
+    "tools": {
+        "autoAccept": true,
+        "truncateToolOutputThreshold": 100000
+    },
+    "context": {
+        "fileName": [
+            "gemini_prompt.md",
+            "GEMINI.md",
+            "progress.txt"
+        ],
+        "fileFiltering": {
+            "respectGitIgnore": true
+        }
+    },
+    "ui": {
+        "hideBanner": true,
+        "hideTips": true,
+        "dynamicWindowTitle": false, // Saves resources
+        "showStatusInTitle": false,
+        "theme": "Dracula"
+    },
+    "general": {
+        "enablePromptCompletion": false, // Disable autocomplete (not needed)
+        "enableAutoUpdateNotification": false // Prevent interruptions
+    }
+}
