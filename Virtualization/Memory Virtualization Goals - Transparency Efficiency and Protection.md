@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 13
+type: concept
+source: "OSTEP Ch. 13: The Abstraction: Address Spaces"
 tags:
   - virtualization
   - memory

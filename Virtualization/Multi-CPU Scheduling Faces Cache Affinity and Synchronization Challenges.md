@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 10
+type: algorithm
+source: "OSTEP Ch. 10: Multiprocessor Scheduling (Advanced)"
 tags:
   - virtualization
   - scheduling

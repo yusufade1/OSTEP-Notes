@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 14
+type: mechanism
+source: "OSTEP Ch. 14: Interlude: Memory API"
 tags:
   - virtualization
   - memory

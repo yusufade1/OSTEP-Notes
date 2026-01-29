@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 9
+type: algorithm
+source: "OSTEP Ch. 9: Scheduling: Proportional Share"
 tags:
   - virtualization
   - scheduling

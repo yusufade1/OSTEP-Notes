@@ -1,12 +1,13 @@
 ---
-type: atomic
-source: OSTEP Ch. 6
+type: mechanism
+source: "OSTEP Ch. 6: Mechanism: Limited Direct Execution"
 tags:
   - virtualization
   - mechanisms
   - direct-execution
 related:
   - "[[A Process is a Running Program]]"
+  - "[[IO and Storage - Chapter Overview]]"
   - "[[User Mode and Kernel Mode Provide Dual Protection Levels]]"
   - "[[Timer Interrupts Enable Preemptive Multitasking]]"
   - "[[Virtualization MOC]]"

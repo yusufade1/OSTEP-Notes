@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 17
+type: algorithm
+source: "OSTEP Ch. 17: Free-Space Management"
 tags:
   - virtualization
   - memory

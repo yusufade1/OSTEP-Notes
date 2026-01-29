@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 7
+type: algorithm
+source: "OSTEP Ch. 7: Scheduling: Introduction"
 tags:
   - virtualization
   - scheduling

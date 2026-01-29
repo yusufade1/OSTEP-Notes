@@ -1,28 +1,37 @@
 ---
 type: overview
-source: OSTEP Ch. 4
+source: "OSTEP Ch. 4-6: Processes"
 tags:
   - virtualization
   - processes
 related:
   - "[[Virtualization MOC]]"
-  - "[[A Process is a Running Program]]"
-  - "[[Process States - Ready Running and Blocked]]"
-  - "[[Process Data Structures - PCB Registers and Memory Image]]"
+  - "[[Threads - Chapter Overview]]"
+  - "[[fork() Creates a Child by Copying Parent]]"
+  - "[[Direct Execution Runs Programs Directly on the CPU]]"
+  - "[[System Calls Transfer Control via Trap and Return-from-Trap]]"
+prerequisites: []
 ---
 
 # Processes - Chapter Overview
 
-This chapter introduces the **process** as the fundamental abstraction the OS provides for a running program. The OS virtualizes the CPU by time-sharing it among processes, giving each the illusion of having its own processor.
+> [!SUMMARY]
+> These chapters introduce the **process** as the fundamental abstraction for a running program. We cover the process lifecycle, the UNIX process API (`fork`, `exec`, `wait`), and the mechanism of **Limited Direct Execution**, which allows the OS to maintain control while running programs at hardware speed.
+
 
 ## Key Concepts
 
-- **[[A Process is a Running Program]]** — The process abstraction encompasses all the state needed to run a program: memory, registers, and I/O information.
-- **[[Process States - Ready Running and Blocked]]** — A process transitions between ready, running, and blocked states as it executes and waits for resources.
-- **[[Process Data Structures - PCB Registers and Memory Image]]** — The OS tracks each process using a Process Control Block containing register context, memory mappings, and scheduling metadata.
+- **[[A Process is a Running Program]]** — The abstraction of an executing program's state.
+- **[[Process States - Ready Running and Blocked]]** — The transitions between execution phases.
+- **[[Process API Design Philosophy]]** — Why UNIX separates process creation (`fork`) from program execution (`exec`).
+- **[[Direct Execution Runs Programs Directly on the CPU]]** — Achieving high performance by letting user code run on the processor.
+- **[[User Mode and Kernel Mode Provide Dual Protection Levels]]** — Hardware support for restricting sensitive operations to the OS.
+- **[[System Calls Transfer Control via Trap and Return-from-Trap]]** — The controlled mechanism for applications to request OS services.
+- **[[Timer Interrupts Enable Preemptive Multitasking]]** — How the OS regains control from a running process to switch tasks.
 
 ## Chapter Questions
 
-1. What makes a process different from a program on disk?
-2. How does the OS create the illusion of many CPUs from few?
-3. What information must the OS track for each running process?
+1. How does the `fork()` return value differ in parent and child?
+2. Why is a system call more expensive than a regular function call?
+3. How does the trap table prevent users from executing arbitrary kernel code?
+4. What state must be saved during a context switch?

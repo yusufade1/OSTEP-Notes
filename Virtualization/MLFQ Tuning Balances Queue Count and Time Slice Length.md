@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 8
+type: algorithm
+source: "OSTEP Ch. 8: Scheduling: The Multi-Level Feedback Queue"
 tags:
   - virtualization
   - scheduling

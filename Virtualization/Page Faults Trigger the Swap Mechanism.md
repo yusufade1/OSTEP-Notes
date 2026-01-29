@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 21
+type: mechanism
+source: "OSTEP Ch. 21: Beyond Physical Memory: Mechanisms"
 tags:
   - virtualization
   - memory

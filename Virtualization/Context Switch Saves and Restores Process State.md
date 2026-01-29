@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 6
+type: mechanism
+source: "OSTEP Ch. 6: Mechanism: Limited Direct Execution"
 tags:
   - virtualization
   - mechanisms
@@ -8,6 +8,7 @@ tags:
   - scheduling
 related:
   - "[[Timer Interrupts Enable Preemptive Multitasking]]"
+  - "[[Context Switches Require TLB Flush or ASID Tagging]]"
   - "[[Process Data Structures - PCB Registers and Memory Image]]"
   - "[[Process States - Ready Running and Blocked]]"
   - "[[Virtualization MOC]]"

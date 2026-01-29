@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 4
+type: concept
+source: "OSTEP Ch. 4: The Abstraction: The Process"
 tags:
   - virtualization
   - processes

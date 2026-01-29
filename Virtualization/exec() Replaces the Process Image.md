@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 5
+type: mechanism
+source: "OSTEP Ch. 5: Interlude: Process API"
 tags:
   - virtualization
   - processes

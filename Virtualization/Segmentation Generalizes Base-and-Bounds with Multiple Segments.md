@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 16
+type: mechanism
+source: "OSTEP Ch. 16: Segmentation"
 tags:
   - virtualization
   - memory

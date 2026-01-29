@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 6
+type: mechanism
+source: "OSTEP Ch. 6: Mechanism: Limited Direct Execution"
 tags:
   - virtualization
   - mechanisms

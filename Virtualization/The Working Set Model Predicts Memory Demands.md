@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 22
+type: algorithm
+source: "OSTEP Ch. 22: Beyond Physical Memory: Policies"
 tags:
   - virtualization
   - memory

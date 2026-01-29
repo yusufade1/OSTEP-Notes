@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 19
+type: mechanism
+source: "OSTEP Ch. 19: Paging: Faster Translations (TLBs)"
 tags:
   - virtualization
   - memory

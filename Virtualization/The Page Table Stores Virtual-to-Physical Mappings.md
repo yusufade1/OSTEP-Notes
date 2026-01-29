@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 18
+type: mechanism
+source: "OSTEP Ch. 18: Paging: Introduction"
 tags:
   - virtualization
   - memory

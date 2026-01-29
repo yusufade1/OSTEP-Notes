@@ -1,6 +1,6 @@
 ---
-type: atomic
-source: OSTEP Ch. 15
+type: mechanism
+source: "OSTEP Ch. 15: Mechanism: Address Translation"
 tags:
   - virtualization
   - memory
