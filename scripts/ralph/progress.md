@@ -1,0 +1,230 @@
+# Ralph Progress Log
+Started: Sat Jan 24 07:09:57 PM EET 2026
+---
+
+## Codebase Patterns
+- MOC files use YAML frontmatter with `type: moc`, `tags: [topic]`, and `related:` containing wikilinks to other MOCs
+- Atomic notes should use `type: atomic`, include `source`, `tags`, `related` (wikilinks), and `prerequisites` in frontmatter
+- Each atomic note needs a `[!SUMMARY]` callout and should be 200-500 words
+- Folder structure: `Virtualization/`, `Concurrency/`, `Persistence/` at project root
+- Wikilinks use `[[Note Title]]` format (Obsidian-style)
+- Git LF/CRLF warnings appear but don't block commits
+- PRD story "Ch N" numbering differs from OSTEP chapter numbers (US-003 "Ch 3" = OSTEP Ch. 5)
+- Notes with special chars in filenames (parentheses, etc.) work fine for Obsidian wikilinks
+- Mechanism chapters (LDE, scheduling) have strictly linear prerequisite chains; concept chapters (memory, FS) branch more
+- ASCII timeline diagrams use `|===|` for execution blocks and `Time:` axis labels for scheduling trace examples
+- Forward-referencing wikilinks to not-yet-created notes (e.g., MLFQ) are fine — Obsidian shows them as unresolved links
+- Memory layout diagrams use `+--+` box-drawing with labeled annotations (e.g., `<- base_A = 16 KB`) for physical memory visualization
+- The OS/hardware split pattern (hardware=fast path per-access, OS=lifecycle events) is a recurring theme across virtualization chapters
+- OSTEP uses a "limitation → next mechanism" progression: base-and-bounds (internal waste) → segmentation (external fragmentation) → paging (fixed-size units)
+
+---
+
+## 2026-01-24 - US-004
+- Created atomic notes: Direct Execution Runs Programs Directly on the CPU, User Mode and Kernel Mode Provide Dual Protection Levels, System Calls Transfer Control via Trap and Return-from-Trap, Timer Interrupts Enable Preemptive Multitasking, Context Switch Saves and Restores Process State
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (399-459), ≥2 wikilinks
+- Code examples: trap table setup in C (system calls note), xv6 context switch assembly (context switch note)
+- Prerequisites chain: process abstraction → direct execution → user/kernel mode → traps → timer interrupts → context switch
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Limited Direct Execution is OSTEP Ch. 6 (PRD says "Ch 4" — story numbering, not OSTEP chapter)
+  - The "two levels of register saving" concept (hardware saves user regs, OS saves kernel regs) is the most confusing part of context switching — worth emphasizing
+  - Assembly code examples from xv6 work well as pedagogical examples of context switch internals
+  - The prerequisite chain for this chapter is linear and deep: each concept strictly builds on the previous
+  - Timer interrupts are the bridge between mechanisms (this chapter) and policies (scheduling chapters)
+---
+
+## 2026-01-24 - US-003
+- Created atomic notes: fork() Creates a Child by Copying Parent, exec() Replaces the Process Image, wait() Synchronizes Parent and Child, Process API Design Philosophy
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks, C code examples
+- Prerequisites chain: process abstraction → fork → exec/wait → design philosophy
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Process API is OSTEP Ch. 5 (PRD says "Ch 3" but that's story numbering, not OSTEP chapter)
+  - Notes with parentheses in filenames (e.g., `fork()`) work fine in Obsidian wikilinks
+  - The fork-exec-wait separation is a rich design philosophy topic - good for a standalone note beyond just API docs
+  - C code examples with return value checking follow OSTEP's pedagogical pattern
+  - Prerequisites can have multiple independent chains (fork prereqs both abstraction AND states)
+---
+
+## 2026-01-24 - US-002
+- Created chapter overview: Virtualization/Processes - Chapter Overview.md
+- Created atomic notes: A Process is a Running Program, Process States - Ready Running and Blocked, Process Data Structures - PCB Registers and Memory Image
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 wikilinks
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - The source field uses OSTEP chapter numbers (Ch. 4 for processes) which differ from the PRD story numbering
+  - Declarative titles work well as note names - makes wikilinks self-explanatory
+  - Code blocks in notes (e.g., xv6 struct) should be excluded from word count validation
+  - Overview files use `type: overview` rather than `type: atomic`
+  - Prerequisites form a chain: abstraction → states → data structures (DAG structure)
+---
+
+## 2026-01-24 - US-001
+- Created folder structure: Virtualization/, Concurrency/, Persistence/
+- Created MOC skeleton files with valid YAML frontmatter and placeholder sections
+- Files changed: Virtualization/Virtualization MOC.md, Concurrency/Concurrency MOC.md, Persistence/Persistence MOC.md
+- **Learnings for future iterations:**
+  - Pre-existing numbered folders (1- Virtualization, 2- Concurrency, 3- Persistance) exist but the PKM uses clean folder names
+  - YAML frontmatter validation can be done with Python's `yaml.safe_load()` on content between `---` markers
+  - MOC sections correspond to chapter groupings that later stories will populate
+---
+
+## 2026-01-24 - US-005
+- Verified existing atomic notes: Scheduling - Chapter Overview, Turnaround Time and Response Time Measure Scheduling Quality, FIFO Scheduling is Simple but Suffers from Convoy Effect, Shortest Job First Minimizes Average Turnaround Time, Round Robin Trades Turnaround Time for Response Time
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (410-491), ≥4 wikilinks
+- Each algorithm note includes worked trace examples with ASCII timelines showing job arrivals
+- Prerequisites chain: context switch/timer interrupts → metrics → FIFO → SJF → RR
+- Files changed: 5 files in Virtualization/ (committed from previously untracked state)
+- **Learnings for future iterations:**
+  - CPU Scheduling is OSTEP Ch. 7 (PRD says "Ch 5" — story numbering, not OSTEP chapter)
+  - The turnaround/response trade-off is the core pedagogical thread; each algorithm note should position itself on this spectrum
+  - ASCII timeline diagrams (using `=` for execution and `|` for boundaries) are effective for scheduling traces
+  - Forward-referencing MLFQ wikilinks (e.g., `[[MLFQ Basic Rules - Priority Queues with Feedback]]`) work fine — Obsidian treats them as future notes
+  - SJF's three examples (simultaneous, staggered, STCF) show the progressive relaxation pattern OSTEP uses throughout
+---
+
+## 2026-01-24 - US-007
+- Created atomic notes: Lottery Scheduling Uses Tickets to Achieve Proportional Share, Stride Scheduling Provides Deterministic Proportional Share, Multi-CPU Scheduling Faces Cache Affinity and Synchronization Challenges, Single-Queue vs Multi-Queue Approaches Balance Simplicity and Scalability
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (431-499), ≥2 body wikilinks, ≥5 related entries
+- Lottery note includes C code for ticket drawing and worked 10-draw example showing convergence
+- Stride note includes worked pass-counter trace for 3 processes showing deterministic fairness
+- Multi-CPU notes cross-link to context switch and cache affinity concepts
+- Prerequisites chain: scheduling metrics + RR → lottery → stride; scheduling metrics + context switch → multi-CPU challenges → SQMS/MQMS
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Lottery/Stride scheduling is OSTEP Ch. 9, Multi-CPU scheduling is OSTEP Ch. 10 (PRD says "Ch 7-8" — story numbering)
+  - The proportional-share concept bridges fairness (from metrics) with determinism (stride) — lottery is pedagogically first because simpler
+  - Multi-CPU scheduling introduces hardware concerns (cache coherence, NUMA) that don't appear in single-CPU scheduling
+  - The SQMS→MQMS progression mirrors the single-lock→per-CPU-lock pattern seen in concurrent data structures
+  - Word count validation should strip both code blocks AND table rows — tables add visual structure but shouldn't count toward prose length
+---
+
+## 2026-01-24 - US-006
+- Created atomic notes: MLFQ Basic Rules - Priority Queues with Feedback, MLFQ Prevents Gaming with Priority Boost and Accounting, MLFQ Tuning Balances Queue Count and Time Slice Length
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (443-486), ≥3 body wikilinks, ≥5 related entries
+- Each note includes worked examples showing job movement between queues (demotion, boosting, gaming detection)
+- Prerequisites chain: scheduling metrics + Round Robin → basic rules → gaming prevention → tuning
+- Files changed: 3 new files in Virtualization/
+- **Learnings for future iterations:**
+  - MLFQ is OSTEP Ch. 8 (PRD says "Ch 6" — story numbering, not OSTEP chapter)
+  - The forward-reference `[[MLFQ Basic Rules - Priority Queues with Feedback]]` from US-005's Round Robin note is now resolved
+  - MLFQ's five rules evolve across the chapter: Rules 4a/4b become a single Rule 4 (accounting), Rule 5 (boost) is added later
+  - ASCII timeline diagrams for MLFQ need to show queue levels (Q2/Q1/Q0) as rows, not just time axis
+  - The Solaris dispatch table is a good concrete example that shows MLFQ is not just theoretical
+  - "Voo-doo constants" is OSTEP's memorable way of saying these are workload-dependent parameters
+---
+
+## 2026-01-24 - US-008
+- Created chapter overview: Virtualization/Memory - Chapter Overview.md
+- Created atomic notes: The Address Space Abstracts Physical Memory for Each Process, Memory Virtualization Goals - Transparency Efficiency and Protection, Stack and Heap Occupy Opposite Ends of the Address Space, malloc and free Manage Heap Memory Dynamically, Common Memory Bugs - Dangling Pointers Double Free and Leaks
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (409-484), ≥2 body wikilinks, ≥4 related entries
+- Code examples: malloc/free usage patterns (malloc note), bug patterns including use-after-free, double-free, buffer overflow, and leaks (bugs note)
+- Prerequisites chain: process abstraction → address space → virtualization goals; address space → stack/heap layout → malloc/free → memory bugs
+- Files changed: 6 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Address Spaces is OSTEP Ch. 13, Memory API is OSTEP Ch. 14 (PRD says "Ch 9-10" — story numbering, not OSTEP chapter)
+  - The address space note is foundational for ALL subsequent memory stories — it's the equivalent of "A Process is a Running Program" for the memory section
+  - malloc/free being library calls (not syscalls) is a key insight: the system call layer (brk/mmap) is separate from the programmer API layer
+  - Memory bugs note benefits from C code examples showing each bug pattern — the code is more pedagogical than the prose
+  - The stack/heap opposing-growth layout is a convention, not a hardware requirement — emphasizing this prevents misconceptions
+  - Word counts tend to run high when code examples are included; strip code blocks before counting
+---
+
+## 2026-01-24 - US-009
+- Created atomic notes: Address Translation Maps Virtual Addresses to Physical Addresses, Base-and-Bounds Provides Dynamic Relocation, Hardware Registers Enable Efficient Address Translation, The OS Manages Memory at Process Creation and Context Switch
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (396-496), ≥3 body wikilinks, ≥5 related entries
+- Base-and-Bounds note includes ASCII diagram of physical memory layout with 3 relocated processes
+- OS role note includes C code for free list allocation structure
+- Prerequisites chain: address space → virtualization goals → address translation → base-and-bounds → hardware registers → OS role
+- Files changed: 4 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Address Translation is OSTEP Ch. 15 (PRD says "Ch 11" — story numbering, not OSTEP chapter)
+  - The OS/hardware split pattern recurs throughout OSTEP: hardware handles the fast path (every access), OS handles lifecycle events (creation, switch, termination)
+  - Base-and-bounds is pedagogically important as the simplest translation mechanism — all later mechanisms (segmentation, paging) are refinements
+  - The free list data structure introduced here is a forward reference to US-011 (Free-Space Management) — kept simple here, detailed later
+  - Internal waste (unused gap between heap and stack) is the key limitation motivating segmentation — important to emphasize this trade-off
+  - ASCII diagrams for memory layout use `+--+` box drawing and labeled arrows for base/bounds annotations
+---
+
+## 2026-01-25 - US-010
+- Created atomic notes: Segmentation Generalizes Base-and-Bounds with Multiple Segments, Code Stack and Heap Each Get Their Own Segment, The Segment Table Maps Segment Numbers to Base-Bounds Pairs, Coarse-Grained vs Fine-Grained Segmentation Trade Flexibility for Simplicity, External Fragmentation Wastes Memory Between Variable-Sized Segments
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (324-430), ≥3 body wikilinks, ≥5 related entries
+- Segmentation note includes ASCII physical memory diagram showing independent segment placement
+- Segment table note includes address decomposition example with 14-bit virtual address
+- External fragmentation note forward-links to free-space management (US-011)
+- Prerequisites chain: base-and-bounds → segmentation concept → segment types + segment table → coarse/fine-grained → external fragmentation
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Segmentation is OSTEP Ch. 16 (PRD says "Ch 12" — story numbering, not OSTEP chapter)
+  - The forward-reference `[[Segmentation Generalizes Base-and-Bounds with Multiple Segments]]` was already placed in US-009's base-and-bounds note — match titles exactly
+  - Stack negative-growth arithmetic (base + offset - max_seg_size) is the pedagogically trickiest part; worth a worked example
+  - External fragmentation vs internal fragmentation distinction is a key compare/contrast that appears across multiple chapters
+  - Code sharing (same physical code segment, multiple processes) is segmentation's unique advantage over base-and-bounds — paging enables this too but via a different mechanism
+  - The "why coarse won" narrative (fine-grained segmentation's complexity → paging's simplicity) is a useful historical thread
+---
+
+## 2026-01-25 - US-011
+- Created atomic notes: Splitting and Coalescing Keep the Free List Efficient, The Free List Data Structure Tracks Available Memory Regions, Best-Fit Allocation Minimizes Wasted Space but Requires Full Search, Worst-Fit Allocation Leaves Large Holes but Still Fragments, First-Fit and Next-Fit Trade Search Time for Simplicity, The Buddy System Enables Fast Coalescing Through Power-of-Two Sizes, Slab Allocators Pre-Allocate Fixed-Size Object Caches
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (280-414), ≥2 body wikilinks, ≥4 related entries
+- Each allocation strategy note includes trade-off analysis table (speed vs fragmentation)
+- Best-fit/worst-fit notes contrast with each other; first-fit offers speed advantage over both
+- Buddy system note includes power-of-two splitting diagram and XOR buddy address calculation
+- Slab allocator note explains Linux kernel's layered approach (slabs atop buddy allocator)
+- Prerequisites chain: external fragmentation → free list / splitting-coalescing → allocation strategies (best/worst/first-fit) → buddy system / slab allocator
+- Files changed: 7 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Free-Space Management is OSTEP Ch. 17 (PRD says "Ch 13" — story numbering, not OSTEP chapter)
+  - The allocation strategy comparison (best/worst/first/next-fit) is best presented as a set of notes with cross-references and comparison tables
+  - Trade-off tables (| Factor | Behavior |) are effective for summarizing algorithm properties
+  - Buddy system's XOR trick for finding buddies is elegant — worth a worked address example
+  - Slab allocators are kernel-specific but important context: they're how Linux manages common objects
+  - Forward references to paging (next story US-012) are natural here: fixed-size allocation avoids fragmentation
+---
+
+## 2026-01-25 - US-012
+- Created atomic notes: Paging Divides Memory into Fixed-Size Pages and Frames, The Page Table Stores Virtual-to-Physical Mappings, Page Table Entries Contain PFN and Control Bits, Virtual Addresses Split into VPN and Offset, Paging Eliminates External Fragmentation Through Fixed-Size Units
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (366-462), ≥2 body wikilinks, ≥6 related entries
+- VPN+Offset note includes full worked example: 16-bit address 0x3A5B → VPN=3 → PFN=7 → physical 0x7A5B
+- PTE note covers all control bits: valid, present, R/W/X, dirty, accessed with x86 bit layout
+- Prerequisites chain: external fragmentation + segmentation → paging concept → page table → PTE → VPN/offset; segmentation → paging advantages
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Paging Introduction is OSTEP Ch. 18 (PRD says "Ch 14" — story numbering, not OSTEP chapter)
+  - The worked VPN+offset example is the pedagogical heart of this chapter — showing actual bit manipulation makes translation concrete
+  - Page table overhead (4 MB per process with 32-bit addresses and 4 KB pages) is the hook for US-014 (smaller page tables)
+  - Forward references to TLBs are natural: "this happens on every access" motivates caching
+  - The "paging vs segmentation" comparison table pattern is effective for contrasting mechanisms
+  - Paging notes connect to both segmentation (what it replaces) and free-space management (what it simplifies)
+---
+
+## 2026-01-25 - US-013
+- Created atomic notes: The TLB Caches Address Translations for Fast Access, TLB Hits Bypass Memory While Misses Consult the Page Table, Hardware-Managed and Software-Managed TLBs Differ in Miss Handling, TLB Entries Store VPN PFN and Control Fields Including ASID, Context Switches Require TLB Flush or ASID Tagging, TLB Replacement Policies Choose Which Entry to Evict
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words (380-450), ≥2 body wikilinks, ≥6 related entries
+- Hardware/Software TLB note includes MIPS TLB miss handler assembly from OSTEP
+- Context switch note cross-links to scheduling (cache affinity, MQMS) and explains flush vs ASID trade-off
+- Prerequisites chain: page table + PTE → TLB concept → TLB hit/miss → hardware/software TLBs + TLB contents → context switch handling → replacement policies
+- Files changed: 6 new files in Virtualization/
+- **Learnings for future iterations:**
+  - TLBs is OSTEP Ch. 19 (PRD says "Ch 15" — story numbering, not OSTEP chapter)
+  - The TLB chapter is the bridge between paging mechanism (Ch. 18) and paging optimization (Ch. 20 smaller page tables)
+  - Context switch TLB handling connects memory virtualization to scheduling — this is a key cross-theme link the PRD requires in US-038
+  - ASID size (8 bits = 256 values) creates interesting edge case behavior with many processes
+  - The OS/hardware split pattern continues: hardware handles TLB hit (fast path), OS/hardware handles miss (depending on architecture)
+  - Replacement policy matters less for TLBs than for page replacement (99% hit rate makes miss policy less impactful)
+---
+
+## 2026-01-25 - US-014
+- Created atomic notes: Linear Page Tables Waste Memory for Large Address Spaces, Larger Pages Reduce Table Size but Increase Internal Fragmentation, Multi-Level Page Tables Save Space Through Demand Allocation, Inverted Page Tables Map Physical Frames to Virtual Pages, Hybrid Paging and Segmentation Combines Both Approaches
+- All notes have valid YAML, [!SUMMARY] callouts, 200-500 words, ≥2 body wikilinks, ≥6 related entries
+- Multi-level note includes detailed worked example: 14-bit address translation through page directory + page table
+- Prerequisites chain: linear page table problem + paging intro → larger pages / multi-level / inverted / hybrid approaches
+- Files changed: 5 new files in Virtualization/
+- **Learnings for future iterations:**
+  - Smaller Page Tables is OSTEP Ch. 20 (PRD says "Ch 16" — story numbering, not OSTEP chapter)
+  - Multi-level page tables are the dominant solution in practice (x86-64 uses 4 levels); inverted tables are historical (PowerPC)
+  - The worked translation example should show all three address components: directory index, table index, offset
+  - Page table chunks being page-sized is a key design insight—it enables using the same allocator for page tables and data
+  - Hybrid paging-segmentation reintroduces external fragmentation at the kernel level, which explains why it lost to pure multi-level
+  - The 4 MB per process calculation (32-bit, 4 KB pages, 4-byte PTEs) is the hook that motivates all solutions
+---
